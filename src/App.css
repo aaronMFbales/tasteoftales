@@ -1,30 +1,29 @@
-.sip-btn:hover {
-  background: linear-gradient(180deg, #c8a16a 0%, #a47c4b 100%);
-  transform: translateY(-4px) scale(1.08);
-  box-shadow: 0 12px 32px 0 rgba(122,90,53,0.18), 0 4px 8px 0 rgba(0,0,0,0.10);
-  filter: brightness(1.08);
+
+.hover-slow {
+  animation: hoverUpDown 7s cubic-bezier(0.4,0,0.2,1) 1 forwards;
+}
+.sip-btn {
+  background: linear-gradient(180deg, #a47c4b 0%, #7a5a35 100%);
+  color: #fff !important;
+  border: none;
+  outline: none;
+  font-family: 'Pacifico', cursive !important;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  box-shadow: 0 8px 24px 0 rgba(122,90,53,0.25), 0 2px 4px 0 rgba(0,0,0,0.15);
 }
 
-
-  .sip-btn {
-    background: linear-gradient(180deg, #a47c4b 0%, #7a5a35 100%);
-    color: #fff !important;
-    border: none;
-    outline: none;
-    opacity: 0;
-    pointer-events: none;
-    animation: btnAppear 2s cubic-bezier(0.4,0,0.2,1) 1 forwards;
-    animation-delay: 5s;
-    font-family: 'Pacifico', cursive !important;
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: 0.02em;
-    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-  }
-
+.sip-btn:hover {
+  background: linear-gradient(180deg, #c8a16a 0%, #a47c4b 100%);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 32px 0 rgba(122,90,53,0.18), 0 4px 8px 0 rgba(0,0,0,0.10);
+}
 
 .sip-btn:active {
+  box-shadow: 0 2px 8px 0 rgba(122,90,53,0.18), 0 1px 2px 0 rgba(0,0,0,0.12);
   transform: translateY(2px) scale(0.98);
 }
 
@@ -48,9 +47,7 @@
   }
 }
 
-.hover-slow {
-  animation: hoverUpDown 7s cubic-bezier(0.4,0,0.2,1) 1 forwards;
-}
+
 
 @keyframes hoverUpDown {
   0% {
