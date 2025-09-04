@@ -7,7 +7,7 @@ function App() {
   const navigate = useNavigate();
   const [showBtn, setShowBtn] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setShowBtn(true), 7000); // match image animation duration
+    const timer = setTimeout(() => setShowBtn(true), 4000); // match image animation duration
     return () => clearTimeout(timer);
   }, []);
   return (
