@@ -17,7 +17,7 @@ function App() {
     >
   <img src="/5.png" alt="Taste of Tales Logo" className="h-[50rem] w-auto hover-slow" />
       <button
-        className={`mt-12 w-32 h-32 rounded-full bg-amber-700 text-xl font-bold transition-all duration-200 flex items-center justify-center sip-btn${showBtn ? ' visible' : ''}`}
+        className={`mt-30 w-32 h-32 rounded-full bg-amber-700 text-xl font-bold transition-all duration-200 flex items-center justify-center sip-btn${showBtn ? ' visible' : ''}`}
         onClick={() => navigate('/second')}
         style={{ opacity: showBtn ? 1 : 0, pointerEvents: showBtn ? 'auto' : 'none', transition: 'opacity 0.7s' }}
       >
