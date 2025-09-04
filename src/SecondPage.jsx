@@ -10,7 +10,7 @@ function Hero() {
   <h1 className="mt-0 mb-0 max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', fontSize: '4rem', color: '#38220f', fontWeight: 700, marginBottom: 0 }}>
     Welcome to <span className="font-semibold text-amber-400">Taste of Tales</span>
   </h1>
-  <p className="mt-0 mb-0 text-lg md:text-xl max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', color: '#38220f', marginBottom: 0 }}>
+  <p className="mt-0 mb-0 max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', color: '#38220f', marginBottom: 50, fontSize: '1.3rem', fontWeight: 200 }}>
     where coffee meets stories and community.
   </p>
         <p className="mt-0 text-lg md:text-xl max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', color: '#38220f' }}>
@@ -38,6 +38,58 @@ function Hero() {
             reminds us that coffee is more than just a drink — it’s an experience. Each cup carries a journey of flavors, the hands that crafted it, and the moments we share while enjoying it. Whether it’s the comfort of a morning ritual, the spark of a meaningful conversation, or the inspiration from a quiet pause, every cup connects us to a story worth telling.
           </div>
         </div>
+
+        {/* Coffee Stories / Journal Highlights Section */}
+        <section className="mt-20 mb-12 px-8 w-full flex flex-col items-center">
+          <h2 className="font-bold text-center mb-6" style={{ color: '#38220f', fontFamily: 'Pacifico, cursive', fontSize: '3rem' }}>
+            Coffee Stories / Journal Highlights
+          </h2>
+          <div className="max-w-3xl w-full text-center" style={{ color: '#634832', fontSize: '1.25rem', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}>
+            {/* Add your stories or highlights here */}
+            <p>
+              Explore inspiring stories from coffee lovers, farmers, and baristas. Dive into journal highlights that celebrate the journey, culture, and moments behind every cup.
+            </p>
+            {/* 3x3 Grid for images/blogs/stories */}
+            <div className="mt-10 coffee-stories-grid">
+              {/* 1st box */}
+              <a href="https://coffeeforpeace.com/2025/07/28/celebrating-kape-partnering-for-justice-through-coffee/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
+                <div className="coffee-story-img-frame">
+                  <img src="/kpc.png" alt="Kape Partnering for Justice" />
+                </div>
+              </a>
+              {/* 2nd box */}
+              <a href="https://www.damngoodtravels.com/2023/12/a-coffee-story-connecting-over-cups.html" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
+                <div className="coffee-story-img-frame">
+                  <img src="/A Coffee Story.jpg" alt="A Coffee Story" />
+                </div>
+              </a>
+              {/* 3rd box */}
+              <a href="https://kalsada.com/blog/tag/philippine+coffee" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
+                <div className="coffee-story-img-frame">
+                  <img src="/kalsadaphcoffee.webp" alt="Kalsada PH Coffee" />
+                </div>
+              </a>
+              {/* 4th box */}
+              <a href="https://oxfam.org.ph/davao-coffee-shop-helps-lift-farmers-out-of-poverty-2/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
+                <div className="coffee-story-img-frame">
+                  <img src="/oxfam.jpg" alt="Oxfam Davao Coffee Shop" />
+                </div>
+              </a>
+              {/* 5th box */}
+              <a href="https://kapediaries.com/2024/03/31/lot-38-davaos-quirky-coffee-shop/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
+                <div className="coffee-story-img-frame">
+                  <img src="/lot38.webp" alt="Lot 38 Davao Coffee Shop" />
+                </div>
+              </a>
+              {/* 6th box */}
+              <a href="https://kapediaries.com/2021/09/12/a-regular-trip-to-langub/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
+                <div className="coffee-story-img-frame">
+                  <img src="/Langub.webp" alt="Langub Coffee Story" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
             href="#stories"
