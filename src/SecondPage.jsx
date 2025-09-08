@@ -144,8 +144,10 @@ function Hero() {
         </h1>
         <div className="mt-4 image-text-row">
           <img src="/6.png" alt="Decorative" />
-          <div className="image-description">
-            <span>“Every Cup Tells a Story”</span>
+          <div className="image-description" style={{ color: '#755c47', fontSize: '1.25rem', fontWeight: 400 }}>
+            <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.5rem', fontWeight: 700 }}>
+              “Every Cup Tells a Story”
+            </span>
             <br />
             reminds us that coffee is more than just a drink — it’s an experience. Each cup carries a journey of flavors, the hands that crafted it, and the moments we share while enjoying it. Whether it’s the comfort of a morning ritual, the spark of a meaningful conversation, or the inspiration from a quiet pause, every cup connects us to a story worth telling.
           </div>

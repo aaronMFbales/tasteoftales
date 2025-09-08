@@ -20,8 +20,8 @@ function App() {
       className="flex flex-col items-center justify-between min-h-screen"
       style={{ background: '#ece0d1', minHeight: '100vh', width: '100vw' }}
     >
-      <div />
-      <img src="/5.png" alt="Taste of Tales Logo" className="h-[50rem] w-auto hover-slow" />
+  <div style={{ height: '1.5rem' }} />
+  <img src="/5.png" alt="Taste of Tales Logo" className="h-[50rem] w-auto hover-slow" style={{ marginTop: '-2.5rem' }} />
       <div
         className="mt-8 mb-8 px-4 max-w-xl text-center tasteoftales-tagline"
         style={{
