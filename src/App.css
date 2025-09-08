@@ -108,6 +108,13 @@
 .coffee-knowledge-card .coffee-knowledge-map {
   width: 90%;
   min-width: 200px;
+.coffee-story-title.small {
+  font-size: 0.95rem;
+  font-weight: normal;
+  margin-top: 0.4rem;
+  text-align: center;
+  width: 100%;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   max-width: 340px;
   min-height: 80px;
   background: #f5e6d6;
