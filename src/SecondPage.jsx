@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+import BeanCard from './BeanCard';
+import { BeakerIcon, FireIcon, GlobeAltIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
 
 function Hero() {
+  // Modal state for Beans & Flavors
+  const [selectedBean, setSelectedBean] = useState(null);
+  const [showBeanModal, setShowBeanModal] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -25,6 +30,19 @@ function Hero() {
   const brewingGuides = {
     AeroPress: (
       <>
+        <div style={{ marginBottom: '0.7rem', fontWeight: 600, color: '#7e5f3b' }}>
+          <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.15rem' }}>Requirements:</span>
+          <ul style={{ margin: '0.3rem 0 0 1.2rem', color: '#634832', fontSize: '1rem', fontWeight: 400 }}>
+            <li>AeroPress brewer</li>
+            <li>AeroPress paper filter</li>
+            <li>Fresh coffee beans (15g)</li>
+            <li>Grinder (medium-fine)</li>
+            <li>Kettle (for hot water)</li>
+            <li>Scale (optional)</li>
+            <li>Stirrer</li>
+            <li>Mug</li>
+          </ul>
+        </div>
         <strong>AeroPress Guide:</strong>
         <ol>
           <li>Heat water to 85–90°C (185–194°F).</li>
@@ -39,6 +57,18 @@ function Hero() {
     ),
     'Pour Over': (
       <>
+        <div style={{ marginBottom: '0.7rem', fontWeight: 600, color: '#7e5f3b' }}>
+          <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.15rem' }}>Requirements:</span>
+          <ul style={{ margin: '0.3rem 0 0 1.2rem', color: '#634832', fontSize: '1rem', fontWeight: 400 }}>
+            <li>Pour over dripper (e.g., V60, Chemex, Kalita)</li>
+            <li>Paper filter</li>
+            <li>Fresh coffee beans (20g)</li>
+            <li>Grinder (medium)</li>
+            <li>Kettle (preferably gooseneck)</li>
+            <li>Scale (optional)</li>
+            <li>Mug or carafe</li>
+          </ul>
+        </div>
         <strong>Pour Over Guide:</strong>
         <ol>
           <li>Heat water to 92–96°C (198–205°F).</li>
@@ -53,6 +83,18 @@ function Hero() {
     ),
     Espresso: (
       <>
+        <div style={{ marginBottom: '0.7rem', fontWeight: 600, color: '#7e5f3b' }}>
+          <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.15rem' }}>Requirements:</span>
+          <ul style={{ margin: '0.3rem 0 0 1.2rem', color: '#634832', fontSize: '1rem', fontWeight: 400 }}>
+            <li>Espresso machine</li>
+            <li>Portafilter</li>
+            <li>Fresh coffee beans (18g)</li>
+            <li>Grinder (fine)</li>
+            <li>Tamper</li>
+            <li>Scale (optional)</li>
+            <li>Espresso cup</li>
+          </ul>
+        </div>
         <strong>Espresso Guide:</strong>
         <ol>
           <li>Heat machine, flush group head.</li>
@@ -309,31 +351,76 @@ function Hero() {
                 {brewingGuides[brewMethod]}
               </div>
             </div>
-            {/* Beans & Flavors */}
-            <div className="coffee-knowledge-card">
-              <h3>Beans & Flavors</h3>
-              <div className="coffee-knowledge-beans-list">
-                <div className="coffee-knowledge-bean">
-                  <div className="bean-title">Ethiopian</div>
-                  <div className="bean-desc">Floral, citrus, berry notes</div>
+            {/* Beans & Flavors - Table Layout */}
+            <div className="coffee-knowledge-card beans-flavors-table-card">
+              <h3 className="beans-flavors-title">Beans & Flavors</h3>
+              <table className="beans-flavors-table">
+                <tbody>
+                    {([
+                      {
+                        name: 'Ethiopian',
+                        desc: 'Floral, citrus, berry notes',
+                        details: 'Ethiopian beans are known for their complex floral aroma and bright acidity. They often have berry and citrus flavors, making them a favorite for pour-over and filter methods.',
+                        icon: <SparklesIcon className="h-6 w-6 text-yellow-700" />,
+                        icon: <SparklesIcon className="h-6 w-6" style={{ color: '#d6ad60' }} />,
+                      },
+                      {
+                        name: 'Colombian',
+                        desc: 'Nutty, chocolate, caramel',
+                        details: 'Colombian beans are balanced and smooth, with notes of chocolate, caramel, and nuts. They are versatile and popular for espresso and drip coffee.',
+                        icon: <StarIcon className="h-6 w-6 text-amber-700" />,
+                        icon: <StarIcon className="h-6 w-6" style={{ color: '#d6ad60' }} />,
+                      },
+                      {
+                        name: 'Brazilian',
+                        desc: 'Chocolate, nutty, low acidity',
+                        details: 'Brazilian beans are mild, with low acidity and a nutty, chocolatey profile. They are often used in blends and for cold brew.',
+                        icon: <BeakerIcon className="h-6 w-6 text-brown-700" />,
+                        icon: <BeakerIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
+                      },
+                      {
+                        name: 'Vietnamese',
+                        desc: 'Earthy, bold, spicy',
+                        details: 'Vietnamese beans are bold and earthy, with spicy undertones. They are commonly used for strong, sweetened coffee drinks.',
+                        icon: <FireIcon className="h-6 w-6 text-red-700" />,
+                        icon: <FireIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
+                      },
+                      {
+                        name: 'Philippine',
+                        desc: 'Fruity, nutty, sweet finish',
+                        details: 'Philippine beans offer a unique mix of fruity and nutty flavors, with a sweet finish. They are gaining recognition for their specialty profiles.',
+                        icon: <GlobeAltIcon className="h-6 w-6 text-green-700" />,
+                        icon: <GlobeAltIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
+                      },
+                    ]).map((bean, idx) => (
+                      <tr key={bean.name} className="beans-flavors-row" onClick={() => { setSelectedBean(bean); setShowBeanModal(true); }} style={{ cursor: 'pointer' }}>
+                        <td className="beans-flavors-icon"><span>{bean.icon}</span></td>
+                        <td className="beans-flavors-country">{bean.name}</td>
+                        <td className="beans-flavors-notes">{bean.desc}</td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+              {/* Modal for Bean Details */}
+              {showBeanModal && selectedBean && (
+                <div className="bean-modal-overlay" onClick={() => setShowBeanModal(false)}>
+                  <div className="bean-modal-content" onClick={e => e.stopPropagation()}>
+                    <button className="bean-modal-close" onClick={() => setShowBeanModal(false)}>&times;</button>
+                    <div className="bean-modal-icon">{selectedBean.icon}</div>
+                    <h2 className="bean-modal-title">{selectedBean.name}</h2>
+                    <div className="bean-modal-info">
+                      <div className="bean-modal-note">
+                        <span className="bean-modal-note-label">FlavBrewing Methodsor Notes</span>
+                        <span className="bean-modal-note-value">{selectedBean.desc}</span>
+                      </div>
+                      <div className="bean-modal-description">
+                        <span className="bean-modal-description-label">Description</span>
+                        <span className="bean-modal-description-value">{selectedBean.details}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="coffee-knowledge-bean">
-                  <div className="bean-title">Colombian</div>
-                  <div className="bean-desc">Nutty, chocolate, caramel</div>
-                </div>
-                <div className="coffee-knowledge-bean">
-                  <div className="bean-title">Brazilian</div>
-                  <div className="bean-desc">Chocolate, nutty, low acidity</div>
-                </div>
-                <div className="coffee-knowledge-bean">
-                  <div className="bean-title">Vietnamese</div>
-                  <div className="bean-desc">Earthy, bold, spicy</div>
-                </div>
-                <div className="coffee-knowledge-bean">
-                  <div className="bean-title">Philippine</div>
-                  <div className="bean-desc">Fruity, nutty, sweet finish</div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
