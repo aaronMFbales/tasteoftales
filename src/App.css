@@ -1,3 +1,401 @@
+/* Every Cup Tells a Story Section */
+.every-cup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0rem;
+  margin-bottom: 7rem;
+  width: 100%;
+}
+.every-cup-section img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.every-cup-description {
+  color: #755c47;
+  font-size: 1.25rem;
+  font-weight: 400;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.every-cup-title-italic {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #7e5f3b;
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
+/* Bean Modal Info Redesign */
+.bean-modal-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  align-items: center;
+}
+.bean-modal-note {
+  background: linear-gradient(90deg, #fff8ef 60%, #f5e6d6 100%);
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px 0 rgba(150,114,89,0.08);
+  border: 2px solid #d6ad60;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bean-modal-note-label {
+  font-family: 'Pacifico', cursive;
+  color: #a0521c;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.bean-modal-note-value {
+  color: #38220f;
+  font-size: 1.08rem;
+  font-weight: 500;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+.bean-modal-description {
+  background: linear-gradient(90deg, #fff8ef 60%, #f5e6d6 100%);
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px 0 rgba(150,114,89,0.08);
+  border: 2px solid #d6ad60;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bean-modal-description-label {
+  font-family: 'Pacifico', cursive;
+  color: #a0521c;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.bean-modal-description-value {
+  color: #38220f;
+  font-size: 1.08rem;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-top: 0.2rem;
+}
+/* Elegant Coffee Modal Styles */
+.bean-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 20, 10, 0.55);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+
+.bean-modal-content {
+  background: #fff8ef;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(150,114,89,0.18);
+  border: 3px solid #d6ad60;
+  padding: 1.2rem 1rem 1rem 1rem;
+  min-width: 260px;
+  max-width: 95vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bean-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #d6ad60;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.bean-modal-close:hover {
+  color: #7e5f3b;
+}
+
+.bean-modal-icon {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  margin-top: -0.5rem;
+}
+.bean-modal-title {
+  color: #7e5f3b;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.3rem;
+  margin-bottom: 0.3rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+.bean-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.bean-modal-label {
+  color: #634832;
+  font-weight: 700;
+  font-size: 1.08rem;
+  margin-bottom: 0.2rem;
+  width: 100%;
+}
+.bean-modal-input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  border: 2px solid #d6ad60;
+  margin-top: 0.5rem;
+  color: #38220f;
+  background: #fff8ef;
+  font-size: 1.08rem;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-shadow: 0 1px 4px 0 rgba(150,114,89,0.07);
+}
+.bean-modal-textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  border: 2px solid #d6ad60;
+  margin-top: 0.5rem;
+  color: #38220f;
+  background: #fff8ef;
+  font-size: 1.08rem;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-shadow: 0 1px 4px 0 rgba(150,114,89,0.07);
+  resize: vertical;
+}
+/* Beans & Flavors Table Layout Styles */
+.beans-flavors-table-card {
+  background: #fff8ef;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(150,114,89,0.07);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 260px;
+  max-width: 320px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+.beans-flavors-title {
+  font-family: 'Pacifico', cursive;
+  color: #7e5f3b;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+.beans-flavors-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.7rem;
+}
+.beans-flavors-row {
+  background: #f5e6d6;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 6px 0 rgba(150,114,89,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.beans-flavors-row:hover {
+  box-shadow: 0 4px 16px 0 rgba(150,114,89,0.15);
+  transform: scale(1.03);
+}
+.beans-flavors-icon {
+  font-size: 1.7rem;
+  text-align: center;
+  width: 2.5rem;
+}
+.beans-flavors-country {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.15rem;
+  color: #7e5f3b;
+  font-weight: 600;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.beans-flavors-notes {
+  color: #634832;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+/* Bean Modal Styles */
+.bean-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(60, 40, 20, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.bean-modal {
+  background: #fff8ef;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(150,114,89,0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 400px;
+  width: 90vw;
+  position: relative;
+  text-align: center;
+  animation: beanModalAppear 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.bean-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #a0521c;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 2;
+}
+.bean-modal-close:hover {
+  color: #d6ad60;
+}
+@keyframes beanModalAppear {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+/* Bean Card Interactive Styles */
+.bean-card-container {
+  perspective: 1200px;
+  display: inline-block;
+  margin: 1rem;
+}
+.bean-card {
+  width: 220px;
+  height: 320px;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px 0 rgba(150,114,89,0.10);
+  background: #fff8ef;
+}
+.bean-card.flipped {
+  transform: rotateY(180deg);
+}
+.bean-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 36px 0 rgba(150,114,89,0.22);
+  z-index: 2;
+}
+.bean-card.selected {
+  border: 3px solid #a0521c;
+  box-shadow: 0 0 0 6px #f5e6d6, 0 8px 32px 0 rgba(150,114,89,0.18);
+}
+/* Bean card faces: front is visible by default, back is hidden until flipped */
+.bean-card-front, .bean-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+.bean-card-front {
+  background: #fff8ef;
+  color: #38220f;
+  /* No transform, visible by default */
+}
+.bean-card-back {
+  background: #f5e6d6;
+  color: #38220f;
+  transform: rotateY(180deg);
+}
+.bean-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+  transition: color 0.3s, transform 0.4s;
+  color: #a0521c;
+}
+.bean-card.selected .bean-card-icon {
+  color: #d6ad60;
+  animation: beanIconPulse 0.8s;
+}
+@keyframes beanIconPulse {
+  0% { transform: scale(1); color: #a0521c; }
+  40% { transform: scale(1.25); color: #d6ad60; }
+  60% { transform: scale(1.1); color: #a0521c; }
+  100% { transform: scale(1); color: #d6ad60; }
+}
+.bean-card-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.3rem;
+  color: #7e5f3b;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.bean-card-desc {
+  color: #634832;
+  font-size: 1.05rem;
+  text-align: center;
+  margin-bottom: 0.7rem;
+}
+.bean-card-flavor {
+  font-size: 1.08rem;
+  color: #a0521c;
+  font-weight: 500;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+.bean-card-profile {
+  font-size: 0.98rem;
+  color: #38220f;
+  margin-top: 0.5rem;
+  text-align: center;
+}
 .coffee-story-title.small {
   font-size: 0.85rem;
   font-weight: 500;
@@ -61,17 +459,28 @@
   background: #f5e6d6;
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px 0 rgba(150,114,89,0.10);
-  padding: 3rem 2rem 2.5rem 2rem;
+  padding: 1.5rem 2rem 2.5rem 2rem;
   margin: 0 auto 3rem auto;
   max-width: 1200px;
   width: 100%;
 }
 .coffee-knowledge-hub-title {
-  font-family: 'Pacifico', cursive;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: #38220f;
-  font-size: 2.7rem;
+  font-size: 3.5rem;
   margin-bottom: 2rem;
   font-weight: bold;
+  font-style: italic;
+}
+
+.stories-title-italic {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  color: #7e5f3b;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 .coffee-knowledge-hub-content {
   display: flex;
@@ -108,13 +517,6 @@
 .coffee-knowledge-card .coffee-knowledge-map {
   width: 90%;
   min-width: 200px;
-.coffee-story-title.small {
-  font-size: 0.95rem;
-  font-weight: normal;
-  margin-top: 0.4rem;
-  text-align: center;
-  width: 100%;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   max-width: 340px;
   min-height: 80px;
   background: #f5e6d6;
@@ -309,7 +711,7 @@
   color: #fff !important;
   border: none;
   outline: none;
-  font-family: 'Pacifico', cursive !important;
+ font-family: 'Pacifico', cursive !important;
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: 0.02em;

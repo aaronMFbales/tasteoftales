@@ -65,7 +65,7 @@ function Hero() {
             <li>Fresh coffee beans (16g)</li>
             <li>Grinder (medium)</li>
             <li>Kettle (preferably gooseneck)</li>
-            <li>Scale (optional)</li>
+            <li>Scale</li>
             <li>Mug or carafe</li>
           </ul>
         </div>
@@ -96,7 +96,7 @@ function Hero() {
             <li>Fresh coffee beans (18g)</li>
             <li>Grinder (fine)</li>
             <li>Tamper</li>
-            <li>Scale (optional)</li>
+            <li>Scale</li>
             <li>Espresso cup</li>
           </ul>
         </div>
@@ -167,13 +167,15 @@ function Hero() {
           Welcome to <span className="font-semibold text-amber-400">Taste of Tales</span>
         </h1>
         <p className="mt-0 mb-0 max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', color: '#7e5f3b', marginBottom: 50, fontSize: '2rem', fontWeight: 200 }}>
-          where coffee meets stories and community.
+          <span style={{ fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', fontStyle: 'italic', color: '#7e5f3b', fontWeight: 400 }}>
+            where coffee meets stories and community.
+          </span>
         </p>
         <p className="mt-0 text-lg md:text-xl max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', color: '#38220f' }}>
           Discover the spirit behind every brew and share the moments that matter.
         </p>
         <div className="flex justify-center mt-8">
-          <div style={{ display: 'inline-block', border: '6px solid #634832', borderRadius: '1rem', padding: '1rem', background: '#e5d3bc', margin: 0, marginBottom: '2.5rem' }}>
+          <div style={{ display: 'inline-block', border: '6px solid #634832', borderRadius: '1rem', padding: '1rem', background: '#e5d3bc', margin: 0, marginBottom: '4rem' }}>
             <video
               ref={videoRef}
               src="/COFFEE VIDEO MONTAGE.mp4"
@@ -186,25 +188,25 @@ function Hero() {
             </video>
           </div>
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg mt-6" style={{ color: '#7e5f3b' }}>
-          Every Cup Tells a Story
-        </h1>
-        <div className="mt-4 image-text-row">
-          <img src="/6.png" alt="Decorative" />
-          <div className="image-description" style={{ color: '#755c47', fontSize: '1.25rem', fontWeight: 400 }}>
-            <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.5rem', fontWeight: 700 }}>
+        <section className="every-cup-section flex flex-col items-center justify-center mt-10 mb-10">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg mb-6" style={{ color: '#7e5f3b' }}>
+            <span className="every-cup-title-italic">Every Cup Tells a Story</span>
+          </h1>
+          <img src="/6.png" alt="Decorative" className="mx-auto" style={{ maxWidth: '1000px', width: '100%', height: 'auto', display: 'block' }} />
+          <div className="every-cup-description text-center" style={{ color: '#755c47', fontSize: '1.5rem', fontWeight: 400, maxWidth: '1100px' }}>
+            <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '2.5rem', fontWeight: 700 }}>
               “Every Cup Tells a Story”
             </span>
             <br />
-            reminds us that coffee is more than just a drink — it’s an experience. Each cup carries a journey of flavors, the hands that crafted it, and the moments we share while enjoying it. Whether it’s the comfort of a morning ritual, the spark of a meaningful conversation, or the inspiration from a quiet pause, every cup connects us to a story worth telling.
+            Coffee has always been more than just a drink, it’s an experience that touches every part of our lives. Each cup carries with it a journey: the origins of the beans, the care of the farmers who nurtured them, the craft of the roasters and brewers, and finally, the moments we create while sharing it. A sip of coffee can be the comfort of a familiar morning ritual, the spark that fuels a heartfelt conversation, or the quiet pause that inspires reflection. In every flavor, aroma, and memory, there is a story waiting to be told, and coffee invites us to be part of that story.
           </div>
-        </div>
+        </section>
 
         {/* Coffee Stories / Journal Highlights Section */}
         <section className="mt-20 mb-12 px-8 w-full flex flex-col items-center">
-          <h2 className="font-bold text-center mb-6" style={{ color: '#7e5f3b', fontFamily: 'Pacifico, cursive', fontSize: '3rem' }}>
-            Coffee Stories / Journal Highlights
-          </h2>
+         <h2 className="font-bold text-center mb-6" style={{ color: '#7e5f3b', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', fontSize: '3rem' }}>
+  <span className="stories-title-italic">Coffee Stories / Journal Highlights</span>
+</h2>
           <div className="max-w-3xl w-full text-center" style={{ color: '#634832', fontSize: '1.25rem', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}>
             {/* Add your stories or highlights here */}
             <p>
@@ -258,8 +260,8 @@ function Hero() {
           </div>
         </section>
         {/* Coffee Knowledge Hub Section */}
-        <section className="coffee-knowledge-hub">
-          <h2 className="coffee-knowledge-hub-title" style={{ color: '#7e5f3b' }}>Coffee Knowledge Hub</h2>
+  <section className="coffee-knowledge-hub" style={{ marginTop: '1rem' }}>
+   <h2 className="coffee-knowledge-hub-title" style={{ color: '#7e5f3b', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}>Coffee Knowledge Hub</h2>
           <div className="coffee-knowledge-hub-content">
             {/* Coffee Origins */}
             <div className="coffee-knowledge-card">
