@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
+import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
 
 function Hero() {
   const videoRef = useRef(null);
@@ -17,6 +18,8 @@ function Hero() {
 
   // Brewing guide state
   const [brewMethod, setBrewMethod] = useState('AeroPress');
+  // Coffee origins state
+  const [origin, setOrigin] = useState('Ethiopia');
 
   // Brewing guides data
   const brewingGuides = {
@@ -61,6 +64,53 @@ function Hero() {
       </>
     ),
   };
+
+  // Coffee origins info with continent
+  const originsInfo = {
+    Ethiopia: {
+      title: "Ethiopia",
+      desc: "Widely regarded as the birthplace of coffee, Ethiopia is famous for its heirloom varieties and ancient coffee traditions. Ethiopian coffees are celebrated for their floral, fruity, and wine-like profiles, grown in lush highlands by smallholder farmers.",
+      continent: "Africa",
+    },
+    Colombia: {
+      title: "Colombia",
+      desc: "Colombia is one of the world’s most recognized coffee origins, known for its high-altitude farms and meticulous processing. Colombian coffee is prized for its balanced flavor, bright acidity, and caramel sweetness, produced by generations of dedicated growers.",
+      continent: "South America",
+    },
+    Brazil: {
+      title: "Brazil",
+      desc: "As the largest coffee producer globally, Brazil’s vast plantations yield a wide range of beans. Brazilian coffee is known for its chocolatey, nutty notes and low acidity, forming the backbone of many espresso blends and commercial coffees.",
+      continent: "South America",
+    },
+    Vietnam: {
+      title: "Vietnam",
+      desc: "Vietnam is the world’s leading producer of robusta coffee, with a unique coffee culture centered around strong, bold brews. Vietnamese coffee origins are rooted in small farms and traditional methods, often enjoyed with sweetened condensed milk.",
+      continent: "Asia",
+    },
+    Philippines: {
+      title: "Philippines",
+      desc: "The Philippines has a rich coffee heritage, producing arabica, robusta, excelsa, and liberica (barako) beans. Philippine coffee origins are diverse, with distinct flavors from each region and a growing movement to revive local coffee traditions.",
+      continent: "Asia",
+    },
+  };
+
+    // Map center coordinates for each origin
+    const mapCenters = {
+      Ethiopia: [39.5, 9.1],
+      Colombia: [-74.3, 4.6],
+      Brazil: [-51.9, -14.2],
+      Vietnam: [108.2, 14.1],
+      Philippines: [121.8, 12.9],
+    };
+
+    // Zoom level for each origin (zoomed out)
+    const mapZooms = {
+      Ethiopia: 2.2,
+      Colombia: 2.2,
+      Brazil: 1.8,
+      Vietnam: 2.5,
+      Philippines: 2.7,
+    };
 
   return (
     <section className="relative bg-[url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center bg-no-repeat h-screen flex items-center">
@@ -159,13 +209,69 @@ function Hero() {
             {/* Coffee Origins */}
             <div className="coffee-knowledge-card">
               <h3>Coffee Origins</h3>
-              <div className="coffee-knowledge-map">[Map: Ethiopia, Colombia, etc.]</div>
+              <div className="coffee-knowledge-map">
+                  <div style={{ marginBottom: '1rem' }}>
+                    <strong>{originsInfo[origin].title}</strong>
+                    <div style={{ marginTop: '0.5rem', color: '#634832', fontSize: '1rem', textAlign: 'center' }}>
+                      {originsInfo[origin].desc}
+                    </div>
+                    <div style={{ marginTop: '0.5rem', color: '#967259', fontSize: '0.98rem', fontWeight: 500, textAlign: 'center' }}>
+                      <span>Continent: {originsInfo[origin].continent}</span>
+                    </div>
+                  </div>
+                  <div className="coffee-knowledge-map-visual">
+                    <ComposableMap projectionConfig={{ scale: 110 }} width={160} height={240} style={{ width: '100%', height: '100%' }}>
+                      <ZoomableGroup center={mapCenters[origin]} zoom={mapZooms[origin]}>
+                        <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
+                          {({ geographies }) =>
+                            geographies.map(geo => {
+                              const countryNames = {
+                                Ethiopia: 'Ethiopia',
+                                Colombia: 'Colombia',
+                                Brazil: 'Brazil',
+                                Vietnam: 'Vietnam',
+                                Philippines: 'Philippines',
+                              };
+                              const isHighlighted = geo.properties.name === countryNames[origin];
+                              return (
+                                <Geography
+                                  key={geo.rsmKey}
+                                  geography={geo}
+                                  style={{
+                                    default: {
+                                      fill: isHighlighted ? '#d6ad60' : '#ece0d1',
+                                      stroke: '#634832',
+                                      strokeWidth: 0.5,
+                                      outline: 'none',
+                                    },
+                                    hover: {
+                                      fill: isHighlighted ? '#b6862c' : '#d6ad60',
+                                      outline: 'none',
+                                    },
+                                    pressed: {
+                                      fill: '#b6862c',
+                                      outline: 'none',
+                                    },
+                                  }}
+                                />
+                              );
+                            })
+                          }
+                        </Geographies>
+                      </ZoomableGroup>
+                    </ComposableMap>
+                  </div>
+              </div>
               <div className="coffee-knowledge-origins-btns">
-                <button>Ethiopia</button>
-                <button>Colombia</button>
-                <button>Brazil</button>
-                <button>Vietnam</button>
-                <button>Philippines</button>
+                {Object.keys(originsInfo).map((key) => (
+                  <button
+                    key={key}
+                    className={origin === key ? 'active' : ''}
+                    onClick={() => setOrigin(key)}
+                  >
+                    {key}
+                  </button>
+                ))}
               </div>
             </div>
             {/* Brewing Methods */}
@@ -191,7 +297,7 @@ function Hero() {
                   Espresso
                 </button>
               </div>
-              <div className="coffee-knowledge-brew" style={{ textAlign: 'left', color: '#634832', fontSize: '1rem' }}>
+              <div className="coffee-knowledge-brew">
                 {brewingGuides[brewMethod]}
               </div>
             </div>
