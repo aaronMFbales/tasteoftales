@@ -169,36 +169,42 @@ function Hero() {
               <a href="https://coffeeforpeace.com/2025/07/28/celebrating-kape-partnering-for-justice-through-coffee/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
                   <img src="/kpc.png" alt="Kape Partnering for Justice" />
+                  <div className="coffee-story-title small">Kape Partnering for Justice</div>
                 </div>
               </a>
               {/* 2nd box */}
               <a href="https://www.damngoodtravels.com/2023/12/a-coffee-story-connecting-over-cups.html" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
                   <img src="/A Coffee Story.jpg" alt="A Coffee Story" />
+                  <div className="coffee-story-title small">A Coffee Story: Connecting Over Cups</div>
                 </div>
               </a>
               {/* 3rd box */}
               <a href="https://kalsada.com/blog/tag/philippine+coffee" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
                   <img src="/kalsadaphcoffee.webp" alt="Kalsada PH Coffee" />
+                  <div className="coffee-story-title small">Kalsada PH Coffee</div>
                 </div>
               </a>
               {/* 4th box */}
               <a href="https://oxfam.org.ph/davao-coffee-shop-helps-lift-farmers-out-of-poverty-2/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
                   <img src="/oxfam.jpg" alt="Oxfam Davao Coffee Shop" />
+                  <div className="coffee-story-title small">Oxfam Davao Coffee Shop</div>
                 </div>
               </a>
               {/* 5th box */}
               <a href="https://kapediaries.com/2024/03/31/lot-38-davaos-quirky-coffee-shop/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
                   <img src="/lot38.webp" alt="Lot 38 Davao Coffee Shop" />
+                  <div className="coffee-story-title small">Lot 38 Davao Coffee Shop</div>
                 </div>
               </a>
               {/* 6th box */}
               <a href="https://kapediaries.com/2021/09/12/a-regular-trip-to-langub/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
                   <img src="/Langub.webp" alt="Langub Coffee Story" />
+                  <div className="coffee-story-title small">Langub Coffee Story</div>
                 </div>
               </a>
             </div>
