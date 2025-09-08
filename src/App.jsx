@@ -25,10 +25,11 @@ function App() {
       <div
         className="mt-8 mb-8 px-4 max-w-xl text-center tasteoftales-tagline"
         style={{
-          fontFamily: 'Pacifico, cursive',
+          fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif',
           color: '#7e5f3b',
           fontSize: '1.5rem',
           fontWeight: 400,
+          fontStyle: 'italic',
           cursor: 'pointer',
           opacity: showTagline ? 1 : 0,
           transition: 'opacity 0.7s',
