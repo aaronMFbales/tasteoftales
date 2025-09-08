@@ -361,35 +361,30 @@ function Hero() {
                         name: 'Ethiopian',
                         desc: 'Floral, citrus, berry notes',
                         details: 'Ethiopian beans are known for their complex floral aroma and bright acidity. They often have berry and citrus flavors, making them a favorite for pour-over and filter methods.',
-                        icon: <SparklesIcon className="h-6 w-6 text-yellow-700" />,
                         icon: <SparklesIcon className="h-6 w-6" style={{ color: '#d6ad60' }} />,
                       },
                       {
                         name: 'Colombian',
                         desc: 'Nutty, chocolate, caramel',
                         details: 'Colombian beans are balanced and smooth, with notes of chocolate, caramel, and nuts. They are versatile and popular for espresso and drip coffee.',
-                        icon: <StarIcon className="h-6 w-6 text-amber-700" />,
                         icon: <StarIcon className="h-6 w-6" style={{ color: '#d6ad60' }} />,
                       },
                       {
                         name: 'Brazilian',
                         desc: 'Chocolate, nutty, low acidity',
                         details: 'Brazilian beans are mild, with low acidity and a nutty, chocolatey profile. They are often used in blends and for cold brew.',
-                        icon: <BeakerIcon className="h-6 w-6 text-brown-700" />,
                         icon: <BeakerIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
                       },
                       {
                         name: 'Vietnamese',
                         desc: 'Earthy, bold, spicy',
                         details: 'Vietnamese beans are bold and earthy, with spicy undertones. They are commonly used for strong, sweetened coffee drinks.',
-                        icon: <FireIcon className="h-6 w-6 text-red-700" />,
                         icon: <FireIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
                       },
                       {
                         name: 'Philippine',
                         desc: 'Fruity, nutty, sweet finish',
                         details: 'Philippine beans offer a unique mix of fruity and nutty flavors, with a sweet finish. They are gaining recognition for their specialty profiles.',
-                        icon: <GlobeAltIcon className="h-6 w-6 text-green-700" />,
                         icon: <GlobeAltIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
                       },
                     ]).map((bean, idx) => (
@@ -410,7 +405,7 @@ function Hero() {
                     <h2 className="bean-modal-title">{selectedBean.name}</h2>
                     <div className="bean-modal-info">
                       <div className="bean-modal-note">
-                        <span className="bean-modal-note-label">FlavBrewing Methodsor Notes</span>
+                        <span className="bean-modal-note-label">Flavor Notes</span>
                         <span className="bean-modal-note-value">{selectedBean.desc}</span>
                       </div>
                       <div className="bean-modal-description">
