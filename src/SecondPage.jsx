@@ -62,7 +62,7 @@ function Hero() {
           <ul style={{ margin: '0.3rem 0 0 1.2rem', color: '#634832', fontSize: '1rem', fontWeight: 400 }}>
             <li>Pour over dripper (e.g., V60, Chemex, Kalita)</li>
             <li>Paper filter</li>
-            <li>Fresh coffee beans (20g)</li>
+            <li>Fresh coffee beans (16g)</li>
             <li>Grinder (medium)</li>
             <li>Kettle (preferably gooseneck)</li>
             <li>Scale (optional)</li>
@@ -71,10 +71,15 @@ function Hero() {
         </div>
         <strong>Pour Over Guide:</strong>
         <ol>
-          <li>Heat water to 92–96°C (198–205°F).</li>
+          <li>
+            Heat water to 92–96°C (198–205°F). <br />
+            <span style={{ color: '#b6862c', fontSize: '0.98rem' }}>
+              <em>Note: Some beans may burn at higher temperatures (e.g., above 93°C). Adjust water temperature based on your coffee bean type for best flavor.</em>
+            </span>
+          </li>
           <li>Grind coffee medium.</li>
           <li>Place filter, rinse with hot water.</li>
-          <li>Add 20g coffee, pour 320ml water in circles.</li>
+          <li>Add 16g coffee, pour 320ml water in circles.</li>
           <li>Let bloom for 30 seconds, then continue pouring.</li>
           <li>Total brew time: 2.5–3 minutes.</li>
           <li>Enjoy your pour over!</li>
