@@ -1,7 +1,5 @@
-
-
 import { Link } from 'react-router-dom';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 function Hero() {
   const videoRef = useRef(null);
@@ -17,21 +15,68 @@ function Hero() {
     }
   }, []);
 
+  // Brewing guide state
+  const [brewMethod, setBrewMethod] = useState('AeroPress');
+
+  // Brewing guides data
+  const brewingGuides = {
+    AeroPress: (
+      <>
+        <strong>AeroPress Guide:</strong>
+        <ol>
+          <li>Heat water to 85–90°C (185–194°F).</li>
+          <li>Grind coffee medium-fine.</li>
+          <li>Insert filter, rinse with hot water.</li>
+          <li>Add 15g coffee, pour 220ml water.</li>
+          <li>Stir, steep for 30 seconds.</li>
+          <li>Press gently for 20 seconds.</li>
+          <li>Enjoy your brew!</li>
+        </ol>
+      </>
+    ),
+    'Pour Over': (
+      <>
+        <strong>Pour Over Guide:</strong>
+        <ol>
+          <li>Heat water to 92–96°C (198–205°F).</li>
+          <li>Grind coffee medium.</li>
+          <li>Place filter, rinse with hot water.</li>
+          <li>Add 20g coffee, pour 320ml water in circles.</li>
+          <li>Let bloom for 30 seconds, then continue pouring.</li>
+          <li>Total brew time: 2.5–3 minutes.</li>
+          <li>Enjoy your pour over!</li>
+        </ol>
+      </>
+    ),
+    Espresso: (
+      <>
+        <strong>Espresso Guide:</strong>
+        <ol>
+          <li>Heat machine, flush group head.</li>
+          <li>Grind coffee fine.</li>
+          <li>Add 18g coffee to portafilter, tamp evenly.</li>
+          <li>Brew for 25–30 seconds for a double shot.</li>
+          <li>Enjoy your espresso!</li>
+        </ol>
+      </>
+    ),
+  };
+
   return (
     <section className="relative bg-[url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center bg-no-repeat h-screen flex items-center">
       <div className="absolute inset-0 bg-black/60" /> {/* overlay */}
       <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
-  <h1 className="mt-0 mb-0 max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', fontSize: '7rem', color: '#7e5f3b', fontWeight: 1000, marginBottom: 0 }}>
-    Welcome to <span className="font-semibold text-amber-400">Taste of Tales</span>
-  </h1>
-  <p className="mt-0 mb-0 max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', color: '#7e5f3b', marginBottom: 50, fontSize: '2rem', fontWeight: 200 }}>
-    where coffee meets stories and community.
-  </p>
+        <h1 className="mt-0 mb-0 max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', fontSize: '7rem', color: '#7e5f3b', fontWeight: 1000, marginBottom: 0 }}>
+          Welcome to <span className="font-semibold text-amber-400">Taste of Tales</span>
+        </h1>
+        <p className="mt-0 mb-0 max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'Pacifico, cursive', color: '#7e5f3b', marginBottom: 50, fontSize: '2rem', fontWeight: 200 }}>
+          where coffee meets stories and community.
+        </p>
         <p className="mt-0 text-lg md:text-xl max-w-2xl mx-auto drop-shadow text-center" style={{ fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', color: '#38220f' }}>
           Discover the spirit behind every brew and share the moments that matter.
         </p>
-  <div className="flex justify-center mt-8">
-     <div style={{ display: 'inline-block', border: '6px solid #634832', borderRadius: '1rem', padding: '1rem', background: '#e5d3bc', margin: 0, marginBottom: '2.5rem' }}>
+        <div className="flex justify-center mt-8">
+          <div style={{ display: 'inline-block', border: '6px solid #634832', borderRadius: '1rem', padding: '1rem', background: '#e5d3bc', margin: 0, marginBottom: '2.5rem' }}>
             <video
               ref={videoRef}
               src="/COFFEE VIDEO MONTAGE.mp4"
@@ -127,11 +172,28 @@ function Hero() {
             <div className="coffee-knowledge-card">
               <h3>Brewing Methods</h3>
               <div className="coffee-knowledge-brew-btns">
-                <button>AeroPress</button>
-                <button>Pour Over</button>
-                <button>Espresso</button>
+                <button
+                  className={brewMethod === 'AeroPress' ? 'active' : ''}
+                  onClick={() => setBrewMethod('AeroPress')}
+                >
+                  AeroPress
+                </button>
+                <button
+                  className={brewMethod === 'Pour Over' ? 'active' : ''}
+                  onClick={() => setBrewMethod('Pour Over')}
+                >
+                  Pour Over
+                </button>
+                <button
+                  className={brewMethod === 'Espresso' ? 'active' : ''}
+                  onClick={() => setBrewMethod('Espresso')}
+                >
+                  Espresso
+                </button>
               </div>
-              <div className="coffee-knowledge-brew">[Brewing Guide Placeholder]</div>
+              <div className="coffee-knowledge-brew" style={{ textAlign: 'left', color: '#634832', fontSize: '1rem' }}>
+                {brewingGuides[brewMethod]}
+              </div>
             </div>
             {/* Beans & Flavors */}
             <div className="coffee-knowledge-card">

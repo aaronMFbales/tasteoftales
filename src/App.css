@@ -328,3 +328,54 @@ img[src="/5.png"] {
 .read-the-docs {
   color: #888;
 }
+.coffee-knowledge-brew-btns button.active {
+  background: #7e5f3b;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(150,114,89,0.12);
+}
+
+/* Brewing Methods Placeholder Styling */
+.coffee-knowledge-card .coffee-knowledge-brew {
+  width: 100%;
+  min-height: 120px;
+  background: #f5e6d6;
+  border: 2px solid #967259;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #967259;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  box-sizing: border-box;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px 0 rgba(150,114,89,0.07);
+}
+
+.coffee-knowledge-card .coffee-knowledge-brew strong {
+  font-size: 1.1rem;
+  color: #7e5f3b;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.coffee-knowledge-card .coffee-knowledge-brew ol {
+  margin: 0.5rem 0 0 1.2rem;
+  padding: 0;
+  color: #634832;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.coffee-knowledge-brew-btns {
+  margin-bottom: 1.2rem;
+}
+
+.coffee-knowledge-brew-btns button {
+  min-width: 120px;
+  font-size: 1.08rem;
+  padding: 0.6rem 1.2rem;
+}
