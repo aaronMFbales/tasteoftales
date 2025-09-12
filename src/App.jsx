@@ -42,7 +42,7 @@ function App() {
         <button
           className={`w-32 h-32 rounded-full bg-amber-700 text-xl font-bold transition-all duration-200 flex items-center justify-center sip-btn${showBtn ? ' visible' : ''}`}
           onClick={() => navigate('/second')}
-          style={{ opacity: showBtn ? 1 : 0, pointerEvents: showBtn ? 'auto' : 'none', transition: 'opacity 0.7s', fontFamily: 'Pacifico, cursive' }}
+          style={{ opacity: showBtn ? 1 : 0, pointerEvents: showBtn ? 'auto' : 'none', transition: 'opacity 0.7s', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}
         >
           Take a sip
         </button>

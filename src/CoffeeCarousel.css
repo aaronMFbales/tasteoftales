@@ -1,0 +1,110 @@
+.carousel-container {
+  background: #fff7ed;
+  border-radius: 2.5rem;
+  box-shadow: 0 4px 40px rgba(150, 114, 89, 0.20);
+  padding: 4rem 3rem 3rem 3rem;
+  margin: 2.5rem auto;
+  width: 520px;
+  min-width: 520px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.carousel-title {
+  font-family: 'Pacifico', cursive;
+  color: #967259;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.carousel-arrow {
+  background: #fff;
+  color: #967259;
+  border: 2px solid #967259;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.3rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(150, 114, 89, 0.10);
+  cursor: pointer;
+  margin: 0 0.8rem;
+  transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
+  outline: none;
+}
+.carousel-arrow:hover, .carousel-arrow:focus {
+  border-color: #bfa07a;
+  color: #bfa07a;
+  box-shadow: 0 4px 16px rgba(150, 114, 89, 0.18);
+}
+
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+}
+
+.carousel-image {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: #ece0d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  overflow: hidden;
+}
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.carousel-image-placeholder {
+  color: #967259;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.carousel-info h3 {
+  font-family: inherit;
+  color: #967259;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-style: normal;
+  font-weight: 600;
+}
+.carousel-info p {
+  color: #6d4c2b;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.carousel-indicators {
+  margin-top: 1.2rem;
+}
+.carousel-indicators span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ece0d1;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.carousel-indicators .active {
+  background: #967259;
+}

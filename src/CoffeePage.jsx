@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CoffeeCarousel from './CoffeeCarousel';
+import './CoffeeCarousel.css';
 
 function CoffeePage() {
   return (
@@ -38,7 +40,10 @@ function CoffeePage() {
         </div>
       </header>
   <div style={{ height: '4.5rem', background: '#ece0d1' }} />
-  {/* Coffee Page content will go here */}
+  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem', marginTop: '2rem' }}>
+    <CoffeeCarousel category="hot" />
+    <CoffeeCarousel category="cold" />
+  </div>
     </div>
   );
 }
