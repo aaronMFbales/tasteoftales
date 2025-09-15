@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import coffeeData from './coffeeData';
 import './CoffeeCarousel.css';
 
-function CoffeeCarousel({ category }) {
+function CoffeeCarousel({ category, onImageClick }) {
   const coffees = coffeeData[category];
   const [current, setCurrent] = useState(0);
-  const [showModal, setShowModal] = useState(false);
 
   const prev = () => setCurrent((current - 1 + coffees.length) % coffees.length);
   const next = () => setCurrent((current + 1) % coffees.length);
@@ -23,7 +22,7 @@ function CoffeeCarousel({ category }) {
                   src={coffees[current].image}
                   alt={coffees[current].name}
                   className="carousel-img-clickable"
-                  onClick={() => setShowModal(true)}
+                  onClick={() => onImageClick && onImageClick(current)}
                   style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
                 />
               ) : (
@@ -47,20 +46,6 @@ function CoffeeCarousel({ category }) {
           ))}
         </div>
       </div>
-      {showModal && (
-        <div className="carousel-modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="carousel-modal-content" onClick={e => e.stopPropagation()}>
-            <img
-              src={coffees[current].image}
-              alt={coffees[current].name}
-              className="carousel-modal-img"
-              style={{ animation: 'modalZoomIn 0.3s' }}
-            />
-            <div className="carousel-modal-coffee-name">{coffees[current].name}</div>
-            <button className="carousel-modal-close" onClick={() => setShowModal(false)}>&times;</button>
-          </div>
-        </div>
-      )}
     </>
   );
 }

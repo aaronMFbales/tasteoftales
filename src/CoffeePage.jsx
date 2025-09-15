@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CoffeeCarousel from './CoffeeCarousel';
+import coffeeData from './coffeeData';
 import './CoffeeCarousel.css';
 
 function CoffeePage() {
+  const [animate, setAnimate] = useState(false);
+  const [modal, setModal] = useState(null); // { category, index }
+  useEffect(() => {
+    setTimeout(() => setAnimate(true), 100);
+  }, []);
+  useEffect(() => {
+    if (modal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [modal]);
   return (
-  <div style={{ minHeight: '100vh', width: '100vw', background: '#ece0d1', position: 'relative' }}>
+    <div style={{ minHeight: '100vh', width: '100vw', background: '#ece0d1', position: 'relative' }}>
       <header
         style={{
           width: '100%',
@@ -39,11 +55,29 @@ function CoffeePage() {
           </nav>
         </div>
       </header>
-  <div style={{ height: '2.5rem', background: '#ece0d1' }} />
-  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem', marginTop: '0.5rem' }}>
-    <CoffeeCarousel category="hot" />
-    <CoffeeCarousel category="cold" />
-  </div>
+      <div style={{ height: '2.5rem', background: '#ece0d1' }} />
+      <div className={`carousel-entrance-row${animate ? ' animate' : ''}`} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem', marginTop: '0.5rem' }}>
+        <div className={`carousel-entrance${animate ? ' animate' : ''}`}>
+          <CoffeeCarousel category="hot" onImageClick={idx => setModal({ category: 'hot', index: idx })} />
+        </div>
+        <div className={`carousel-entrance${animate ? ' animate' : ''}`}>
+          <CoffeeCarousel category="cold" onImageClick={idx => setModal({ category: 'cold', index: idx })} />
+        </div>
+      </div>
+      {modal && (
+        <div className="carousel-modal-overlay coffee-modal-overlay" onClick={() => setModal(null)}>
+          <div className="carousel-modal-content coffee-modal-content" onClick={e => e.stopPropagation()}>
+            <img
+              src={coffeeData[modal.category][modal.index].image}
+              alt={coffeeData[modal.category][modal.index].name}
+              className="carousel-modal-img coffee-modal-img-full"
+              style={{ animation: 'modalZoomIn 0.3s' }}
+            />
+            <div className="carousel-modal-coffee-name coffee-modal-coffee-name-normal">{coffeeData[modal.category][modal.index].name}</div>
+            <button className="carousel-modal-close coffee-modal-close" onClick={() => setModal(null)} aria-label="Close modal">&times;</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

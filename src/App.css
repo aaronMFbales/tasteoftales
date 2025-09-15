@@ -622,10 +622,8 @@
   padding-bottom: 2.5rem;
 }
 .coffee-story-box {
-  min-width: 210px;
-  max-width: 260px;
-  width: 100%;
-  height: auto;
+  width: 280px;
+  height: 240px;
   box-sizing: border-box;
   margin: 0 !important;
   padding: 1rem 1rem 1rem 1rem;

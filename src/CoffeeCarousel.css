@@ -1,3 +1,22 @@
+/* Entrance animation for carousels on CoffeePage */
+.carousel-entrance-row {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.carousel-entrance-row.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.carousel-entrance {
+  opacity: 0;
+  transform: scale(0.85) translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.carousel-entrance.animate {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
 /* Modal coffee name below image */
 .carousel-modal-coffee-name {
   margin-top: 1.2rem;
@@ -9,52 +28,73 @@
   letter-spacing: 0.02em;
 }
 /* Modal for projecting image */
-.carousel-modal-overlay {
+/* Enhanced modal overlay for coffee theme */
+/* Modal overlay: simple semi-transparent dark background */
+.coffee-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(60, 40, 20, 0.35);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: modalFadeIn 0.3s;
 }
-.carousel-modal-content {
-  background: #fff7ed;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(150,114,89,0.18);
-  padding: 2rem;
+.coffee-modal-content {
+  background: #fff8ef;
+  border-radius: 2rem;
+  box-shadow: 0 12px 48px 0 rgba(150,114,89,0.22);
+  border: 4px solid #a0521c;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 95vw;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: modalZoomIn 0.3s;
 }
-.carousel-modal-img {
+/* Modal image: full display, no border */
+.coffee-modal-img-full {
   max-width: 80vw;
   max-height: 70vh;
   border-radius: 1.2rem;
   box-shadow: 0 4px 24px 0 rgba(150,114,89,0.18);
   margin-bottom: 1.2rem;
+  object-fit: contain;
 }
-.carousel-modal-close {
+/* Modal coffee name: normal font, bold */
+.coffee-modal-coffee-name-normal {
+  margin-top: 1.2rem;
+  font-size: 2rem;
+  color: #967259;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+/* Fix close button positioning for modal */
+.coffee-modal-close {
   position: absolute;
-  top: 18px;
-  right: 24px;
+  top: 1.2rem;
+  right: 1.5rem;
   background: none;
   border: none;
-  font-size: 2.2rem;
-  color: #967259;
+  font-size: 2.7rem;
+  color: #a0521c;
   cursor: pointer;
   transition: color 0.2s;
-  z-index: 2;
+  z-index: 10;
+  font-weight: bold;
+  text-shadow: 0 2px 12px #d6ad60aa;
+  line-height: 1;
 }
-.carousel-modal-close:hover {
-  color: #a0521c;
+.coffee-modal-close:hover {
+  color: #967259;
 }
 @keyframes modalFadeIn {
   0% { opacity: 0; }
@@ -131,8 +171,8 @@
 }
 
 .carousel-image {
-  width: 240px;
-  height: 240px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   background: #ece0d1;
   display: flex;
