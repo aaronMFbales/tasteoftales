@@ -446,8 +446,12 @@ function Hero() {
 }
 
 export default function SecondPage() {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setAnimate(true), 100);
+  }, []);
   return (
-    <div style={{ minHeight: '100vh', background: '#ece0d1' }}>
+    <div style={{ minHeight: '100vh', background: '#ece0d1', overflowX: 'hidden' }}>
       <header
         style={{
           width: '100%',
@@ -482,8 +486,11 @@ export default function SecondPage() {
         </div>
       </header>
       <div style={{ height: '4.5rem' }} />
-      <Hero />
-      <div className="flex flex-col items-center justify-center min-h-[80vh]">
+      {/* Only animate the contents, not the background */}
+  <div className={`secondpage-entrance${animate ? ' animate' : ''}`} style={{ transition: 'opacity 1.5s', opacity: animate ? 1 : 0, width: '100%' }}>
+        <Hero />
+        <div className="flex flex-col items-center justify-center min-h-[80vh]">
+        </div>
       </div>
     </div>
   );
