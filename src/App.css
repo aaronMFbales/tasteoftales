@@ -38,7 +38,7 @@
   font-style: italic;
   text-align: center;
   margin-top: 2rem;
-  margin-bottom: 0rem;
+  margin-bottom: 0.5rem;
 }
 /* Bean Modal Info Redesign */
 .bean-modal-info {
@@ -123,7 +123,7 @@
   border-radius: 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(150,114,89,0.18);
   border: 3px solid #d6ad60;
-  padding: 1.2rem 1rem 1rem 1rem;
+  padding: 1.2rem 1rem 0.5rem 1rem;
   min-width: 260px;
   max-width: 95vw;
   position: relative;
@@ -403,6 +403,7 @@
 /* Coffee Story Box Title Styling */
 .coffee-story-title {
   margin-top: 0.5rem;
+  margin-bottom: 0.7rem;
   font-size: 1.05rem;
   font-weight: 600;
   color: #7e5f3b;
@@ -622,12 +623,12 @@
 }
 .coffee-story-box {
   min-width: 210px;
-  min-height: 210px;
+  max-width: 260px;
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  margin: 0;
-  padding: 1.2rem 1rem 1.2rem 1rem;
+  margin: 0 !important;
+  padding: 1rem 1rem 1rem 1rem;
   background: #f5e6d6;
   border-radius: 0.75rem;
   box-shadow: 0 4px 16px 0 rgba(150,114,89,0.10);
