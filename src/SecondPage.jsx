@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from 'react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
 import BeanCard from './BeanCard';
 import { BeakerIcon, FireIcon, GlobeAltIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
+import CoffeeFactBox from './CoffeeFactBox';
 
 function Hero() {
   // Modal state for Beans & Flavors
@@ -386,21 +387,21 @@ function Hero() {
                         name: 'Vietnamese',
                         desc: 'Earthy, bold, spicy',
                         details: 'Vietnamese beans are bold and earthy, with spicy undertones. They are commonly used for strong, sweetened coffee drinks.',
-                        icon: <FireIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
-                      },
-                      {
-                        name: 'Philippine',
-                        desc: 'Fruity, nutty, sweet finish',
-                        details: 'Philippine beans offer a unique mix of fruity and nutty flavors, with a sweet finish. They are gaining recognition for their specialty profiles.',
-                        icon: <GlobeAltIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
-                      },
-                    ]).map((bean, idx) => (
-                      <tr key={bean.name} className="beans-flavors-row" onClick={() => { setSelectedBean(bean); setShowBeanModal(true); }} style={{ cursor: 'pointer' }}>
-                        <td className="beans-flavors-icon"><span>{bean.icon}</span></td>
-                        <td className="beans-flavors-country">{bean.name}</td>
-                        <td className="beans-flavors-notes">{bean.desc}</td>
-                      </tr>
-                    ))}
+    icon: <FireIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
+  },
+  {
+    name: 'Philippine',
+    desc: 'Fruity, nutty, sweet finish',
+    details: 'Philippine beans offer a unique mix of fruity and nutty flavors, with a sweet finish. They are gaining recognition for their specialty profiles.',
+    icon: <GlobeAltIcon className="h-6 w-6" style={{ color: '#7e5f3b' }} />,
+  },
+]).map((bean, idx) => (
+  <tr key={bean.name} className="beans-flavors-row" onClick={() => { setSelectedBean(bean); setShowBeanModal(true); }} style={{ cursor: 'pointer' }}>
+    <td className="beans-flavors-icon"><span>{bean.icon}</span></td>
+    <td className="beans-flavors-country">{bean.name}</td>
+    <td className="beans-flavors-notes">{bean.desc}</td>
+  </tr>
+))}
                 </tbody>
               </table>
               {/* Modal for Bean Details */}
@@ -423,6 +424,7 @@ function Hero() {
                   </div>
                 </div>
               )}
+              <CoffeeFactBox />
             </div>
           </div>
         </section>
