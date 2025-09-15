@@ -60,67 +60,67 @@ const coffeeData = {
   cold: [
     {
       name: 'Iced Latte',
-      image: '',
+      image: '/iced latte.jpg',
       description: 'Espresso and milk over ice.',
       ingredients: ['Espresso', 'Milk', 'Ice', 'Syrup']
     },
     {
       name: 'Iced Mocha Latte',
-      image: '',
+      image: '/iced mocha latte.jpg',
       description: 'Chilled latte with chocolate twist.',
       ingredients: ['Espresso', 'Ice', 'Milk', 'Chocolate']
     },
     {
-      name: 'Frapino Caramel',
-      image: '',
-      description: 'Blended coffee with caramel and whipped cream.',
-      ingredients: ['Coffee', 'Ice', 'Milk', 'Caramel syrup']
+      name: 'Caramel Frappuccino style',
+      image: '/caramel frappuccino.jpg',
+      description: 'Blended iced coffee with caramel syrup and whipped cream.',
+      ingredients: ['Coffee', 'Ice', 'Milk', 'Caramel syrup', 'Whipped cream']
     },
     {
-      name: 'Frapino Mocha',
-      image: '',
-      description: 'Chocolate-flavored blended coffee with cream.',
-      ingredients: ['Coffee', 'Ice', 'Milk', 'Cocoa']
+      name: 'Mocha Frappuccino style',
+      image: '/mocha frappuccino.jpg',
+      description: 'Blended iced coffee with chocolate syrup and whipped cream.',
+      ingredients: ['Coffee', 'Ice', 'Milk', 'Chocolate syrup', 'Whipped cream']
     },
     {
       name: 'Iced Espresso',
-      image: '',
+      image: '/iced espresso.jpg',
       description: 'Espresso over ice, served straight or with milk/cream.',
       ingredients: ['Espresso', 'Ice', 'Sugar (optional)', 'Cream (optional)']
     },
     {
       name: 'Cold Brew',
-      image: '',
+      image: '/cold brew.jpg',
       description: 'Long-steeped smooth coffee with ice.',
       ingredients: ['Coffee (steeped)', 'Ice']
     },
     {
       name: 'Frappuccino',
-      image: '',
+      image: '/frappuccino.jpg',
       description: 'Famous blended iced coffee with cream and syrup.',
       ingredients: ['Espresso', 'Blended ice', 'Whipped cream']
     },
     {
       name: 'Mazagran',
-      image: '',
+      image: '/mazagran.jpeg',
       description: 'Espresso with lemon, sugar, and optional rum.',
       ingredients: ['Coffee', 'Sugar', 'Lemon', 'Rum (optional)']
     },
     {
       name: 'Banana Iced Coffee',
-      image: '',
+      image: '/banana iced coffee.jpg',
       description: 'Coffee blended with banana and ice.',
       ingredients: ['Coffee', 'Banana', 'Ice']
     },
     {
       name: 'Apple Iced Coffee',
-      image: '',
+      image: '/apple iced coffee.jpg',
       description: 'Coffee with apple and cinnamon notes.',
       ingredients: ['Coffee', 'Apple', 'Cinnamon', 'Ice']
     },
     {
       name: 'Sprinkle Iced Coffee',
-      image: '',
+      image: '/sprinkle iced coffee.jpg',
       description: 'Fun iced coffee topped with sprinkles, whipped cream, and foamed milk.',
       ingredients: ['Coffee', 'Sprinkles', 'Ice', 'Whipped cream', 'Foamed milk']
     }

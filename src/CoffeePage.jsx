@@ -39,8 +39,8 @@ function CoffeePage() {
           </nav>
         </div>
       </header>
-  <div style={{ height: '4.5rem', background: '#ece0d1' }} />
-  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem', marginTop: '2rem' }}>
+  <div style={{ height: '2.5rem', background: '#ece0d1' }} />
+  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem', marginTop: '0.5rem' }}>
     <CoffeeCarousel category="hot" />
     <CoffeeCarousel category="cold" />
   </div>
