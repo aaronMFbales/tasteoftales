@@ -46,12 +46,12 @@ function CoffeePage() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m4-11v11a1 1 0 001 1h5a1 1 0 001-1V10" />
           </svg>
         </Link>
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start', marginLeft: '33.5vw' }}>
+  <div style={{ flex: 1, display: 'flex', justifyContent: 'center', marginLeft: '-1vw' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-            <Link to="/second" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>Home</Link>
-            <Link to="/coffee" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>Coffee</Link>
-            <Link to="#" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>Blog</Link>
-            <Link to="#" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>About Us</Link>
+            <Link to="/second" className="nav-link">Home</Link>
+            <Link to="/coffee" className="nav-link">Coffee</Link>
+            <Link to="/wheel" className="nav-link">Wheel</Link>
+            <Link to="#" className="nav-link">About Us</Link>
           </nav>
         </div>
       </header>
@@ -74,6 +74,12 @@ function CoffeePage() {
               style={{ animation: 'modalZoomIn 0.3s' }}
             />
             <div className="carousel-modal-coffee-name coffee-modal-coffee-name-normal">{coffeeData[modal.category][modal.index].name}</div>
+            {/* Ingredients below coffee name */}
+            {coffeeData[modal.category][modal.index].ingredients && (
+              <div style={{ marginTop: '0.7rem', fontSize: '1.1rem', color: '#967259', textAlign: 'center', fontWeight: '500', fontFamily: 'inherit' }}>
+                <span style={{ fontWeight: 'bold', fontSize: '1.05rem', color: '#a0521c' }}>Ingredients:</span> {coffeeData[modal.category][modal.index].ingredients.join(', ')}
+              </div>
+            )}
             <button className="carousel-modal-close coffee-modal-close" onClick={() => setModal(null)} aria-label="Close modal">&times;</button>
           </div>
         </div>

@@ -473,17 +473,17 @@ export default function SecondPage() {
           alignItems: 'center',
         }}
       >
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', marginLeft: '2rem', marginRight: '2rem' }}>
+  <Link to="/" style={{ display: 'flex', alignItems: 'center', marginLeft: '2rem', marginRight: '2rem' }}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" style={{ width: '2.2rem', height: '2.2rem', color: '#fff' }}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m4-11v11a1 1 0 001 1h5a1 1 0 001-1V10" />
           </svg>
         </Link>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-            <Link to="/second" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>Home</Link>
-            <Link to="/coffee" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>Coffee</Link>
-            <Link to="#" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>Blog</Link>
-            <Link to="#" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'Pacifico, cursive', fontSize: '1.3rem' }}>About Us</Link>
+            <Link to="/second" className="nav-link">Home</Link>
+            <Link to="/coffee" className="nav-link">Coffee</Link>
+            <Link to="#" className="nav-link">Wheel</Link>
+            <Link to="#" className="nav-link">About Us</Link>
           </nav>
         </div>
       </header>
