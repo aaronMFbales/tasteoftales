@@ -1,7 +1,9 @@
+
 import React from "react";
 import { Link } from 'react-router-dom';
-import './CoffeeCarousel.css';
+import './WheelPage.css';
 import ReactECharts from "echarts-for-react";
+import { coffeeFlavorData } from "./flavorData";
 
 const palette = {
   Fruity: "#F06292",
@@ -16,9 +18,7 @@ const palette = {
   Other: "#90A4AE",
 };
 
-const data = [
-  // ...existing wheel data, omitted for brevity...
-];
+const data = coffeeFlavorData;
 
 function flattenSizes(node, depth = 1) {
   if (!node.children || node.children.length === 0) {
@@ -34,15 +34,8 @@ function flattenSizes(node, depth = 1) {
 const sizedData = data.map((d) => JSON.parse(JSON.stringify(d)));
 sizedData.forEach((d) => flattenSizes(d));
 
-const levels = [
-  {},
-  { r0: 0, r: 60, label: { rotate: 0, fontSize: 14, color: "#111" }, itemStyle: { borderWidth: 2 } },
-  { r0: 60, r: 130, label: { rotate: "tangential", fontSize: 12 }, itemStyle: { borderWidth: 2 } },
-  { r0: 130, r: 220, label: { rotate: "tangential", fontSize: 11, overflow: "truncate" }, itemStyle: { borderWidth: 1 } },
-];
-
-export default function WheelPage() {
-  const option = {
+function getOption() {
+  return {
     tooltip: {
       trigger: "item",
       formatter: (info) => {
@@ -50,24 +43,93 @@ export default function WheelPage() {
           .slice(1)
           .map((n) => n.name)
           .join(" → ");
-        return `<div style="font-size:12px"><strong>${info.name}</strong><br/>${hierarchy}</div>`;
+        return `<div style='font-size:13px'><strong>${info.name}</strong><br/>${hierarchy}</div>`;
       },
     },
     series: [
       {
         type: "sunburst",
-        radius: [0, "100%"],
+        radius: [0, "95%"],
         sort: undefined,
         nodeClick: "zoomToNode",
         emphasis: { focus: "ancestor" },
         data: sizedData,
-        levels,
-        label: { show: true },
+        levels: [
+          {},
+          {
+            r0: 0,
+            r: 100,
+            label: {
+              show: false,
+              rotate: "tangential",
+              align: "center",
+              fontSize: 16,
+              color: "#38220f",
+              fontWeight: "bold",
+              overflow: "break",
+            },
+            itemStyle: { borderWidth: 2 },
+            emphasis: {
+              label: {
+                show: true,
+                color: "#38220f",
+                fontWeight: "bold",
+              }
+            }
+          },
+          {
+            r0: 100,
+            r: 220,
+            label: {
+              show: false,
+              rotate: "tangential",
+              align: "center",
+              fontSize: 13,
+              color: "#38220f",
+              overflow: "break",
+            },
+            itemStyle: { borderWidth: 2 },
+            emphasis: {
+              label: {
+                show: true,
+                color: "#38220f",
+                fontWeight: "bold",
+              }
+            }
+          },
+          {
+            r0: 220,
+            r: 400,
+            label: {
+              show: false,
+              rotate: "tangential",
+              align: "center",
+              fontSize: 11,
+              color: "#38220f",
+              overflow: "truncate",
+            },
+            itemStyle: { borderWidth: 1 },
+            emphasis: {
+              label: {
+                show: true,
+                color: "#38220f",
+                fontWeight: "bold",
+              }
+            }
+          },
+        ],
+        labelLayout: {
+          hideOverlap: false,
+          moveOverlap: 'shiftY',
+        },
         itemStyle: { borderColor: "#fff" },
       },
     ],
+    animation: true,
   };
+}
 
+export default function WheelPage() {
   return (
     <div style={{ minHeight: '100vh', width: '100vw', background: '#f5e6d6', position: 'relative' }}>
       <header
@@ -103,19 +165,30 @@ export default function WheelPage() {
           </nav>
         </div>
       </header>
-      <div style={{ height: '2.5rem', background: '#f5e6d6' }} />
-  <div className="wheel-page" style={{ minHeight: '520px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem', marginTop: 0 }}>
-        <h1 style={{ fontFamily: 'Pacifico, cursive', color: '#967259', fontSize: '2.5rem', marginBottom: '1.5rem', fontWeight: 'bold' }}>Coffee Taster's Flavor Wheel</h1>
-        <ReactECharts
-          style={{ height: 600, width: '100%', maxWidth: 900, background: '#fff', borderRadius: '2rem', boxShadow: '0 4px 32px rgba(150,114,89,0.10)' }}
-          option={option}
-          notMerge={true}
-          lazyUpdate={true}
-        />
-        <p style={{ color: '#6d4c2b', fontSize: '1.1rem', marginTop: '2rem', textAlign: 'center', maxWidth: 700 }}>
+      <div style={{ paddingTop: '7rem', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100vw' }}>
+        <h1 style={{
+          textAlign: 'center',
+          fontFamily: 'Pacifico, cursive',
+          fontSize: '3.2rem',
+          color: '#967259',
+          fontWeight: 'bold',
+          marginBottom: '1.2rem',
+          letterSpacing: '0.04em',
+          textShadow: '0 4px 24px #d6ad6088',
+        }}>
+          Coffee Taster's Flavor Wheel
+        </h1>
+        <div style={{ width: '100vw', maxWidth: '950px', aspectRatio: '1/1', margin: '0 auto' }}>
+          <ReactECharts
+            option={getOption()}
+            style={{ width: '100%', height: '100%', aspectRatio: '1/1' }}
+          />
+        </div>
+        <p className="wheel-tip">
           Tip: Click a segment to zoom. Hover to see the full hierarchy. Expand the dataset in this file to customize categories and descriptors.
         </p>
       </div>
     </div>
   );
 }
+

@@ -482,7 +482,7 @@ export default function SecondPage() {
           <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
             <Link to="/second" className="nav-link">Home</Link>
             <Link to="/coffee" className="nav-link">Coffee</Link>
-            <Link to="#" className="nav-link">Wheel</Link>
+              <Link to="/wheel" className="nav-link">Wheel</Link>
             <Link to="#" className="nav-link">About Us</Link>
           </nav>
         </div>
