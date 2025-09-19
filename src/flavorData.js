@@ -58,7 +58,7 @@ export const coffeeFlavorData = [
     description: "Aromas similar to flowers, light and fragrant.",
     itemStyle: { color: "#E91E63" },
     children: [
-      { name: "Black Tea", description: "Smooth, tannic tea-like notes.", itemStyle: { color: "#6D4C41" } },
+  { name: "Black Tea", description: "Smooth, tannic tea-like notes.", itemStyle: { color: "#6D4C41" }, value: 3 },
       { name: "Floral", description: "Light, fragrant floral notes.", itemStyle: { color: "#F8BBD0" }, children: [
         { name: "Jasmine", description: "Sweet white blossom.", itemStyle: { color: "#BA68C8" } },
         { name: "Rose", description: "Perfumed rose petals.", itemStyle: { color: "#F06292" } },
@@ -129,8 +129,8 @@ export const coffeeFlavorData = [
     description: "Fresh, raw, and plant-like flavors, often associated with underdeveloped beans.",
     itemStyle: { color: "#388E3C" },
     children: [
-      { name: "Olive Oil", description: "Mild oily/olive aroma.", itemStyle: { color: "#B2FF59" } },
-    { name: "Raw", description: "Unprocessed, green raw note.", itemStyle: { color: "#C5E1A5" } },
+      { name: "Olive Oil", description: "Mild oily/olive aroma.", itemStyle: { color: "#B2FF59" }, value: 1.3 },
+      { name: "Raw", description: "Unprocessed, green raw note.", itemStyle: { color: "#C5E1A5" } },
   { name: "Vegetative Notes",
     description: "Raw plant or leafy aromas: grass, stems, peapods, or spinach.",
      itemStyle: { color: "#66BB6A" }, children: [

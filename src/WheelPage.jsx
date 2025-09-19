@@ -2,136 +2,54 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './WheelPage.css';
-import ReactECharts from "echarts-for-react";
-import { coffeeFlavorData } from "./flavorData";
+import D3FlavorWheel from "./D3FlavorWheel";
 
-const palette = {
-  Fruity: "#F06292",
-  Floral: "#BA68C8",
-  "Sweet Aromatics": "#F6BF26",
-  "Brown Sugar": "#F9A825",
-  Roasted: "#8D6E63",
-  "Nutty / Cocoa": "#6D4C41",
-  Spices: "#D4A373",
-  "Sour / Fermented": "#81C784",
-  "Green / Vegetative": "#66BB6A",
-  Other: "#90A4AE",
-};
-
-const data = coffeeFlavorData;
-
-function flattenSizes(node, depth = 1) {
-  if (!node.children || node.children.length === 0) {
-    node.value = 1;
-    return 1;
-  }
-  let sum = 0;
-  for (const child of node.children) sum += flattenSizes(child, depth + 1);
-  node.value = sum;
-  return sum;
-}
-
-const sizedData = data.map((d) => JSON.parse(JSON.stringify(d)));
-sizedData.forEach((d) => flattenSizes(d));
-
-function getOption() {
-  return {
-    tooltip: {
-      trigger: "item",
-      formatter: (info) => {
-        const hierarchy = info.treePathInfo
-          .slice(1)
-          .map((n) => n.name)
-          .join(" → ");
-        return `<div style='font-size:13px'><strong>${info.name}</strong><br/>${hierarchy}</div>`;
-      },
-    },
-    series: [
-      {
-        type: "sunburst",
-        radius: [0, "95%"],
-        sort: undefined,
-        nodeClick: "zoomToNode",
-        emphasis: { focus: "ancestor" },
-        data: sizedData,
-        levels: [
-          {},
-          {
-            r0: 0,
-            r: 100,
-            label: {
-              show: false,
-              rotate: "tangential",
-              align: "center",
-              fontSize: 16,
-              color: "#38220f",
-              fontWeight: "bold",
-              overflow: "break",
-            },
-            itemStyle: { borderWidth: 2 },
-            emphasis: {
-              label: {
-                show: true,
-                color: "#38220f",
-                fontWeight: "bold",
-              }
-            }
-          },
-          {
-            r0: 100,
-            r: 220,
-            label: {
-              show: false,
-              rotate: "tangential",
-              align: "center",
-              fontSize: 13,
-              color: "#38220f",
-              overflow: "break",
-            },
-            itemStyle: { borderWidth: 2 },
-            emphasis: {
-              label: {
-                show: true,
-                color: "#38220f",
-                fontWeight: "bold",
-              }
-            }
-          },
-          {
-            r0: 220,
-            r: 400,
-            label: {
-              show: false,
-              rotate: "tangential",
-              align: "center",
-              fontSize: 11,
-              color: "#38220f",
-              overflow: "truncate",
-            },
-            itemStyle: { borderWidth: 1 },
-            emphasis: {
-              label: {
-                show: true,
-                color: "#38220f",
-                fontWeight: "bold",
-              }
-            }
-          },
-        ],
-        labelLayout: {
-          hideOverlap: false,
-          moveOverlap: 'shiftY',
-        },
-        itemStyle: { borderColor: "#fff" },
-      },
-    ],
-    animation: true,
-  };
-}
 
 export default function WheelPage() {
+  // Handler to exit fullscreen
+  const handleExitFullScreen = () => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  };
+  // Ref for the wheel container
+
+  const wheelContainerRef = React.useRef(null);
+  const [isFullscreen, setIsFullscreen] = React.useState(false);
+
+  // Handler for full screen
+  const handleFullScreen = () => {
+    const el = wheelContainerRef.current;
+    if (el && el.requestFullscreen) {
+      el.requestFullscreen();
+    } else if (el && el.webkitRequestFullscreen) {
+      el.webkitRequestFullscreen();
+    } else if (el && el.msRequestFullscreen) {
+      el.msRequestFullscreen();
+    }
+  };
+
+  React.useEffect(() => {
+    const handleChange = () => {
+      const fsElement = document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+      setIsFullscreen(!!fsElement);
+    };
+    document.addEventListener('fullscreenchange', handleChange);
+    document.addEventListener('webkitfullscreenchange', handleChange);
+    document.addEventListener('msfullscreenchange', handleChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleChange);
+      document.removeEventListener('webkitfullscreenchange', handleChange);
+      document.removeEventListener('msfullscreenchange', handleChange);
+    };
+  }, []);
+
   return (
-    <div style={{ minHeight: '100vh', width: '100vw', background: '#f5e6d6', position: 'relative' }}>
+  <div style={{ minHeight: '100vh', width: '100vw', background: '#f5e6d6', position: 'relative' }}>
       <header
         style={{
           width: '100%',
@@ -165,27 +83,94 @@ export default function WheelPage() {
           </nav>
         </div>
       </header>
-      <div style={{ paddingTop: '7rem', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100vw' }}>
+      <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <h1 style={{
           textAlign: 'center',
-          fontFamily: 'Pacifico, cursive',
+          fontFamily: 'sans-serif',
           fontSize: '3.2rem',
           color: '#967259',
           fontWeight: 'bold',
-          marginBottom: '1.2rem',
+          fontStyle: 'italic',
+          marginTop: '6rem',
+          marginBottom: '2.2rem', // increased space below title
           letterSpacing: '0.04em',
-          textShadow: '0 4px 24px #d6ad6088',
+          textShadow: '2px 2px 0 #ffd29eff, 4px 4px 8px #d6ad6088',
+          transform: 'translateY(2px) scale(1.04)',
         }}>
           Coffee Taster's Flavor Wheel
         </h1>
-        <div style={{ width: '100vw', maxWidth: '950px', aspectRatio: '1/1', margin: '0 auto' }}>
-          <ReactECharts
-            option={getOption()}
-            style={{ width: '100%', height: '100%', aspectRatio: '1/1' }}
-          />
+        <button
+          style={{
+            marginBottom: '1.2rem',
+            padding: '0.7rem 1.6rem',
+            fontSize: '1.2rem',
+            background: '#967259',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '0.5rem',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            boxShadow: '0 2px 8px #96725944',
+            transition: 'background 0.2s',
+            zIndex: 10000,
+          }}
+          onClick={handleFullScreen}
+        >
+          View in full screen
+        </button>
+        <div
+          ref={wheelContainerRef}
+          style={{
+            width: isFullscreen ? '100vw' : '100vw',
+            maxWidth: isFullscreen ? '100vw' : '950px',
+            aspectRatio: '1/1',
+            margin: isFullscreen ? '0 auto' : '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: isFullscreen ? '100vh' : 'auto',
+            background: isFullscreen ? '#f5e6d6' : 'transparent',
+            position: isFullscreen ? 'fixed' : 'static',
+            top: isFullscreen ? 0 : 'auto',
+            left: isFullscreen ? 0 : 'auto',
+            zIndex: isFullscreen ? 9999 : 'auto',
+          }}
+        >
+          {isFullscreen && (
+            <button
+              onClick={handleExitFullScreen}
+              style={{
+                position: 'absolute',
+                top: '2rem',
+                right: '2rem',
+                background: 'linear-gradient(180deg, #8D4F2F 0%, #A0521C 100%)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '0.5rem',
+                width: '4.5rem',
+                height: '2.2rem',
+                fontSize: '1.7rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                zIndex: 10001,
+                boxShadow: '0 4px 16px #96725988, 0 2px 0 #6D4C41',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s',
+                textShadow: '0 2px 4px #6D4C41',
+                letterSpacing: '0.05em',
+              }}
+              aria-label="Exit full screen"
+            >
+              <span style={{fontFamily: 'sans-serif', fontWeight: 'bold', fontSize: '1.5rem', marginTop: '-2px'}}>X</span>
+            </button>
+          )}
+          <D3FlavorWheel width={isFullscreen ? 900 : 950} height={isFullscreen ? 900 : 950} />
         </div>
         <p className="wheel-tip">
-          Tip: Click a segment to zoom. Hover to see the full hierarchy. Expand the dataset in this file to customize categories and descriptors.
+          Tip: Hover over any segment to see its flavor description. This flavor wheel is provided as a demo for educational and development purposes only.<br />
+          The complete Coffee Taster’s Flavor Wheel is a copyrighted work of the Specialty Coffee Association. To access or use the official wheel in its entirety, you’ll need to obtain it directly from <a href="https://sca.coffee/research/coffee-tasters-flavor-wheel" target="_blank" rel="noopener noreferrer" style={{ color: '#967259', fontWeight: 'bold', textDecoration: 'underline' }}>SCA</a>.
         </p>
       </div>
     </div>
