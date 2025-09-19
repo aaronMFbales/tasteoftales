@@ -27,7 +27,7 @@ function flattenData(data) {
   return segments;
 }
 
-export default function D3FlavorWheel({ width = 950, height = 950 }) {
+export default function D3FlavorWheel({ width = 1500, height = 1500 }) {
   const ref = useRef();
   useEffect(() => {
     const radius = Math.min(width, height) / 2 - 10;
@@ -69,10 +69,11 @@ export default function D3FlavorWheel({ width = 950, height = 950 }) {
       })
       .attr("text-anchor", "middle")
       .attr("alignment-baseline", "middle")
-      .attr("font-size", d => 16 - d.depth * 2)
-      .attr("fill", "#fff")
-      .style("font-weight", "bold")
-      .text(d => d.data.name);
+  .attr("font-size", d => 16 - d.depth * 2)
+  .attr("fill", "#fff")
+  .style("font-weight", "bold")
+  .style("text-shadow", "2px 2px 6px rgba(0,0,0,0.6)")
+  .text(d => d.data.name);
   }, [width, height]);
-  return <svg ref={ref} style={{ width, height }} />;
+  return <svg ref={ref} style={{ width: `${width}px`, height: `${height}px`, display: 'block' }} />;
 }
