@@ -57,22 +57,20 @@ export default function D3FlavorWheel({ width = 950, height = 950 }) {
       .data(root.descendants().filter(d => d.depth > 0))
       .enter()
       .append("text")
-      .attr("x", d => {
-        const angle = (d.x0 + d.x1) / 2;
-        const r = (d.y0 + d.y1) / 2;
-        return Math.cos(angle - Math.PI / 2) * r;
-      })
-      .attr("y", d => {
-        const angle = (d.x0 + d.x1) / 2;
-        const r = (d.y0 + d.y1) / 2;
-        return Math.sin(angle - Math.PI / 2) * r;
+      .attr("dy", "0.35em")
+      .attr("transform", d => {
+        const angle = (d.x0 + d.x1) / 2;           // middle of the arc in radians
+        const radius = (d.y0 + d.y1) / 2;          // mid-radius of the arc
+        let rotate = (angle * 180) / Math.PI - 90; // convert to degrees, start at 12 o’clock
+        // Flip upside-down labels so they stay readable
+        if (rotate > 90) rotate -= 180;
+        // First translate, then rotate
+        return `translate(${Math.cos(angle - Math.PI / 2) * radius},${Math.sin(angle - Math.PI / 2) * radius}) rotate(${rotate})`;
       })
       .attr("text-anchor", "middle")
       .attr("alignment-baseline", "middle")
       .attr("font-size", d => 16 - d.depth * 2)
       .attr("fill", "#fff")
-      .attr("stroke", "#000")
-      .attr("stroke-width", 0.3)
       .style("font-weight", "bold")
       .text(d => d.data.name);
   }, [width, height]);
