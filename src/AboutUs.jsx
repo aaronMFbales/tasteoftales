@@ -61,11 +61,32 @@ export default function AboutUs() {
         </div>
         <div style={{ marginBottom: '2.5rem' }}>
             <img src="/expo opening.jpg" alt="Expo Opening" style={{ width: '70%', maxWidth: '500px', borderRadius: '1.5rem', marginBottom: '2rem', boxShadow: '0 4px 24px #a0521c44' }} />
-            <div style={{ fontSize: '2.2rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Opening the Expo</b></div>
+            <div style={{ fontSize: '2.7rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Opening the Expo</b></div>
           <div style={{ fontStyle: 'italic' }}>When the doors opened on August 28, the atmosphere was alive. Rows of booths filled the hall, each carrying beans with origins from mountains and islands across the region. The farmers stood proudly, their faces etched with patience and devotion, each harvest carrying the essence of their land.<br /><br />Everywhere I turned, there was something new to discover. Basilan beans spoke of boldness, Sulu coffee carried resilience, and other roasts told of soil, sunlight, and weather. It felt as though Mindanao itself was speaking through every aroma and every sip.<br /><br />The expo was not only about coffee. It was about passion, about stories poured into cups, and about dreams shared openly with strangers who, for a brief moment, became companions.</div>
         </div>
         <div style={{ marginBottom: '2.5rem' }}>
-            <div style={{ fontSize: '2.2rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Competitions and Craft</b></div>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '1.2rem',
+              justifyItems: 'center',
+              alignItems: 'center',
+              marginBottom: '2rem',
+              width: '100%',
+              maxWidth: '1200px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}>
+              {[1,2,3,4,5,6,7,8,9].map(num => (
+                  <img
+                    key={num}
+                    src={`/comp ${num}.jpg`}
+                    alt={`Competition ${num}`}
+                    style={{ width: '95%', aspectRatio: '16/9', height: 'auto', objectFit: 'cover', borderRadius: '1rem', boxShadow: '0 2px 20px #a0521c44' }}
+                  />
+              ))}
+            </div>
+            <div style={{ fontSize: '3rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Competitions and Craft</b></div>
           <div style={{ fontStyle: 'italic' }}>The competitions were like living art.<br /><br />The First-Timer Latte Art Contest was filled with the bravery of beginners, hearts beating fast as they tried something new.<br />The Non-Professional Latte Art Contest was a showcase of creativity, where milk turned into swans, hearts, and leaves, each cup a canvas of imagination.<br />The Duo Barista Challenge was a performance of harmony, two hands moving in rhythm, proving that coffee, like life, is often best shared.<br /><br />I watched in awe. Behind every design, every pull of espresso, every carefully measured pour, there was more than skill. There was love for the craft, persistence through trial and error, and the belief that something small could touch hearts.<br /><br />It was then I understood that coffee was not just for drinking. It was for telling stories too.</div>
         </div>
         <div style={{ marginBottom: '2.5rem' }}>
