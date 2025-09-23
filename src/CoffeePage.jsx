@@ -21,7 +21,7 @@ function CoffeePage() {
     };
   }, [modal]);
   return (
-    <div style={{ minHeight: '100vh', width: '100vw', background: '#ece0d1', position: 'relative' }}>
+  <div style={{ minHeight: '100vh', width: '100vw', background: '#ece0d1', position: 'relative' }}>
       <header
         style={{
           width: '100%',
@@ -63,6 +63,25 @@ function CoffeePage() {
         <div className={`carousel-entrance${animate ? ' animate' : ''}`}>
           <CoffeeCarousel category="cold" onImageClick={idx => setModal({ category: 'cold', index: idx })} />
         </div>
+      </div>
+      <div style={{
+        width: '100%',
+        textAlign: 'center',
+        marginTop: '-0.7rem',
+        fontSize: '1.22rem',
+        color: '#a0521c',
+        fontWeight: 'bold',
+        letterSpacing: '0.03em',
+        borderRadius: '0.7rem',
+        boxShadow: '0 2px 12px #96725922',
+        background: '#ffe4c4',
+        padding: '0.3rem 1.2rem',
+        display: 'inline-block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      }}>
+        <span style={{ fontFamily: 'Pacifico, cursive', color: '#967259', fontSize: '1.25rem', marginRight: '0.4rem' }}>Tip:</span>
+        <span style={{ fontFamily: 'inherit', color: '#a0521c' }}>Click any coffee image to reveal its ingredients!</span>
       </div>
       {modal && (
         <div className="carousel-modal-overlay coffee-modal-overlay" onClick={() => setModal(null)}>
