@@ -5,6 +5,7 @@ import App from './App.jsx';
 import SecondPage from './SecondPage';
 import CoffeePage from './CoffeePage.jsx';
 import WheelPage from './WheelPage.jsx';
+import AboutUs from './AboutUs.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/second" element={<SecondPage />} />
         <Route path="/coffee" element={<CoffeePage />} />
         <Route path="/wheel" element={<WheelPage />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
     </Router>
   </StrictMode>

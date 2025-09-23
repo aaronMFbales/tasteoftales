@@ -56,7 +56,7 @@ function CoffeePage() {
             <Link to="/second" className="nav-link">Home</Link>
             <Link to="/coffee" className="nav-link">Coffee</Link>
             <Link to="/wheel" className="nav-link">Wheel</Link>
-            <Link to="#" className="nav-link">About Us</Link>
+            <Link to="/about" className="nav-link">About Us</Link>
           </nav>
         </div>
       </header>
