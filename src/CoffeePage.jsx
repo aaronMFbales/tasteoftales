@@ -72,6 +72,7 @@ function CoffeePage() {
         width: '100%',
         textAlign: 'center',
         marginTop: '-0.7rem',
+        marginBottom: '0',
         fontSize: '1.22rem',
         color: '#a0521c',
         fontWeight: 'bold',
@@ -80,9 +81,9 @@ function CoffeePage() {
         boxShadow: '0 2px 12px #96725922',
         background: '#ffe4c4',
         padding: '0.3rem 1.2rem',
-        display: 'inline-block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        display: 'block',
+        marginLeft: '0',
+        marginRight: '0',
       }}>
         <span style={{ fontFamily: 'Pacifico, cursive', color: '#967259', fontSize: '1.25rem', marginRight: '0.4rem' }}>Tip:</span>
         <span style={{ fontFamily: 'inherit', color: '#a0521c' }}>Click any coffee image to reveal its ingredients!</span>

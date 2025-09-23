@@ -140,8 +140,8 @@
   background: #fff7ed;
   border-radius: 2.5rem;
   box-shadow: 0 4px 40px rgba(150, 114, 89, 0.20);
-  padding: 4rem 3rem 3rem 3rem;
-  margin: 2.5rem auto;
+  padding: 4rem 3rem 0 3rem;
+  margin: 2.5rem auto 0 auto;
   width: 520px;
   min-width: 520px;
   max-width: 520px;
