@@ -36,7 +36,7 @@ function App() {
           pointerEvents: showTagline ? 'auto' : 'none',
         }}
       >
-        Welcome to Taste of Tales, where every sip unfolds a story. Discover coffee’s origins, brewing rituals, and the rich flavors that connect us all.
+      Welcome to Taste of Tales, where every sip tells a story. Discover the brewing traditions and rich flavors of coffee in the Philippines that bring us together!
       </div>
   <div className="w-full flex justify-center mb-12" style={{ marginTop: '3.5rem' }}>
         <button

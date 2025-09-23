@@ -258,6 +258,17 @@ function Hero() {
                 </div>
               </a>
             </div>
+              {/* Link for more coffee blog stories */}
+              <div style={{ marginTop: '2rem', marginBottom: '3rem' }}>
+                <a
+                  href="https://kapediaries.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'underline', color: '#7e5f3b', fontSize: '1.15rem', fontWeight: 500 }}
+                >
+                  Click here for more coffee blog stories!
+                </a>
+              </div>
           </div>
         </section>
         {/* Coffee Knowledge Hub Section */}
@@ -428,20 +439,7 @@ function Hero() {
             </div>
           </div>
         </section>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <a
-            href="#stories"
-            className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-lg shadow-lg transition"
-          >
-            Discover Stories
-          </a>
-          <a
-            href="#community"
-            className="px-6 py-3 bg-white/20 hover:bg-white/30 text-white font-medium rounded-lg shadow-lg backdrop-blur transition"
-          >
-            Join the Community
-          </a>
-        </div>
+        {/* Removed Discover Stories and Join the Community buttons at the bottom */}
       </div>
     </section>
   );
