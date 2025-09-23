@@ -168,7 +168,18 @@ export default function WheelPage() {
           )}
           <D3FlavorWheel width={isFullscreen ? 900 : 950} height={isFullscreen ? 900 : 950} />
         </div>
-        <p className="wheel-tip">
+        <p className="wheel-tip" style={{
+          maxWidth: '900px',
+          width: '90%',
+          margin: '2rem auto 2.5rem auto',
+          textAlign: 'center',
+          fontSize: '1.18rem',
+          lineHeight: '1.7',
+          background: 'rgba(255,255,255,0.7)',
+          borderRadius: '0.7rem',
+          padding: '1.2rem 2rem',
+          boxShadow: '0 2px 12px #96725922',
+        }}>
           Tip: Hover over any segment to see its flavor description. This flavor wheel is provided as a demo for educational and development purposes only.<br />
           The complete Coffee Taster’s Flavor Wheel is a copyrighted work of the Specialty Coffee Association. To access or use the official wheel in its entirety, you’ll need to obtain it directly from <a href="https://sca.coffee/research/coffee-tasters-flavor-wheel" target="_blank" rel="noopener noreferrer" style={{ color: '#967259', fontWeight: 'bold', textDecoration: 'underline' }}>SCA</a>.
         </p>
