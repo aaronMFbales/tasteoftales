@@ -104,8 +104,9 @@ export default function AboutUs() {
             Through her, coffee came alive. What was once only a drink to me transformed into an experience. Each cup became a story, each aroma a memory, each sip a connection.
           </div>
         </div>
-        <div style={{ marginBottom: '2.5rem' }}>
-            <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Coffee in Spirit — Sir Jan’s Story</b></div>
+    <div style={{ marginBottom: '2.5rem' }}>
+  <img src="/sir Jan.jpg" alt="Sir Jan" style={{ width: '55%', maxWidth: '320px', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} />
+      <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Coffee in Spirit — Sir Jan’s Story</b></div>
           <div style={{ fontStyle: 'italic' }}>That same day, we witnessed Sir Jan step onto the stage for the Coffee in Spirit competition. He carried with him not just ingredients but months of effort, trial, and inspiration. She told me of the struggles they went through, how they searched for balance, experimenting with flavors until realization struck: taste is never fixed, it is shaped by perception.<br /><br />What made his drink remarkable was not only its fusion of whiskey, banana liqueur, Disaronno, crème de cacao, and espresso. It was how the vessel transformed it. In clay, the flavor softened. In glass, it grew sharper. In ceramic, it deepened. The drink became a reflection of life itself. The same story told in different voices, depending on who holds it.<br /><br />He named it “Tilawi.” A drink crafted with both science and soul, unveiled with the drama of dry ice mist curling around it like memory made visible.<br /><br />To witness it was to understand that coffee, like love, can be more than taste. It can be art, philosophy, and spirit all at once.</div>
         </div>
         <div style={{ marginBottom: '2.5rem' }}>
