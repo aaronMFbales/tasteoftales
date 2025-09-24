@@ -131,6 +131,20 @@ export default function AboutUs() {
           <div style={{ fontStyle: 'italic' }}>And so, Taste of Tales was born.<br /><br />Because coffee is not only beans or brews. It is stories, carried in every sip and shared in every gathering. It is the aroma that lingers long after a moment passes, the warmth that ties us to memories, the flavor that reminds us of people who leave a mark on our spirit.<br /><br />This website is a way to honor those stories. It is a way to remember the expo, the farmers, the baristas, the mentors, and most of all, her. The girl whose love for coffee awakened something within me. The girl whose presence turned an ordinary internship into a chapter of my life that I will carry forever.<br /><br />Taste of Tales is not only about drinks. It is about connection. It is about spirit. It is about the stories that live inside every cup, waiting for someone to taste, to tell, and to remember.<br /><br />And this, above all, is mine.</div>
         </div>
       </div>
+      {/* Ending Signature */}
+      <footer style={{ width: '100%', marginTop: '3rem', padding: '2.5rem 0 2rem 0', background: 'none', textAlign: 'center' }}>
+        <div style={{ color: '#7e5f3b', fontFamily: 'Pacifico, cursive', fontSize: '2.7rem', marginBottom: '0.5rem', letterSpacing: '0.04em' }}>
+          Aaron Bales
+        </div>
+        <div style={{ color: '#634832', fontSize: '1.15rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', maxWidth: '600px', margin: '0 auto' }}>
+          Storyteller, Web Developer, and Lifelong Coffee Enthusiast.<br/>
+          BSIT Major in Business Technology Management, 4th Year Student<br/>
+          University of Southeastern Philippines
+        </div>
+        <div style={{ color: '#a67c52', fontSize: '1.05rem', marginTop: '1.5rem', fontFamily: 'Pacifico, cursive', opacity: 0.7 }}>
+          Thank you for sharing a cup and a story with me.
+        </div>
+      </footer>
       </main>
     </div>
   );
