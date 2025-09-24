@@ -137,12 +137,40 @@ export default function AboutUs() {
           Aaron Bales
         </div>
         <div style={{ color: '#634832', fontSize: '1.15rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', maxWidth: '600px', margin: '0 auto' }}>
-          Storyteller, Web Developer, and Lifelong Coffee Enthusiast.<br/>
+          Creator & Web Developer of Taste of Tales, and Lifelong Coffee Enthusiast.<br/>
           BSIT Major in Business Technology Management, 4th Year Student<br/>
           University of Southeastern Philippines
         </div>
         <div style={{ color: '#a67c52', fontSize: '1.05rem', marginTop: '1.5rem', fontFamily: 'Pacifico, cursive', opacity: 0.7 }}>
           Thank you for sharing a cup and a story with me.
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1.2rem' }}>
+          <a href="https://www.facebook.com/aaronmfbales" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="12" fill="#a67c52"/>
+              <path d="M15.36 8.5H13.5V7.38c0-.41.27-.51.46-.51h1.36V5.09L13.52 5c-2.01 0-2.47 1.5-2.47 2.46V8.5H9.5v2.09h1.55V19h2.45v-8.41h1.65l.21-2.09Z" fill="#fff"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/aaronmfbales/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="12" fill="#a67c52"/>
+              <rect x="7" y="7" width="10" height="10" rx="3" fill="none" stroke="#fff" strokeWidth="1.5"/>
+              <circle cx="12" cy="12" r="2.5" fill="none" stroke="#fff" strokeWidth="1.5"/>
+              <circle cx="15.2" cy="8.8" r="0.8" fill="#fff"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@aaronmfbales" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="12" fill="#a67c52"/>
+              <path d="M16.5 8.5c-.7 0-1.27-.57-1.27-1.27V6.5h-1.23v7.13a1.73 1.73 0 1 1-1.73-1.73h.09V10.6h-.09a3.13 3.13 0 1 0 3.13 3.13V9.77c.36.18.77.28 1.2.28h.2V8.5h-.3Z" fill="#fff"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/aaron-bales-42927437a/?originalSubdomain=ph" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="12" fill="#a67c52"/>
+              <path d="M8.34 17H6.33V10h2.01v7Zm-1-8.01a1.16 1.16 0 1 1 0-2.32 1.16 1.16 0 0 1 0 2.32ZM18 17h-2.01v-3.36c0-.8-.02-1.83-1.12-1.83-1.12 0-1.29.87-1.29 1.77V17h-2.01V10h1.93v.96h.03c.27-.5.93-1.03 1.91-1.03 2.04 0 2.42 1.34 2.42 3.09V17Z" fill="#fff"/>
+            </svg>
+          </a>
         </div>
       </footer>
       </main>
