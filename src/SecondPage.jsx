@@ -180,7 +180,7 @@ function Hero() {
           <div style={{ display: 'inline-block', border: '6px solid #634832', borderRadius: '1rem', padding: '1rem', background: '#e5d3bc', margin: 0, marginBottom: '4rem' }}>
             <video
               ref={videoRef}
-              src="/COFFEE VIDEO MONTAGE.mp4"
+              src="/Coffee Video Montage.mp4"
               controls
               autoPlay
               loop
@@ -240,7 +240,7 @@ function Hero() {
               {/* 4th box */}
               <a href="https://oxfam.org.ph/davao-coffee-shop-helps-lift-farmers-out-of-poverty-2/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
-                  <img src="/oxfam.jpg" alt="Oxfam Davao Coffee Shop" />
+                  <img src="/Oxfam Davao Coffee Shop.jpg" alt="Oxfam Davao Coffee Shop" />
                   <div className="coffee-story-title small">Oxfam Davao Coffee Shop</div>
                 </div>
               </a>
