@@ -4,6 +4,7 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simp
 import BeanCard from './BeanCard';
 import { BeakerIcon, FireIcon, GlobeAltIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
 import CoffeeFactBox from './CoffeeFactBox';
+import './responsive.css';
 
 function Hero() {
   // Modal state for Beans & Flavors

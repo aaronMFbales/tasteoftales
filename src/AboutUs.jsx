@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './responsive.css';
 
 export default function AboutUs() {
   const mainRef = useRef(null);
@@ -280,7 +281,7 @@ export default function AboutUs() {
           <img src="/sir jan awarding.jpg" alt="Sir Jan Awarding" className="about-img-lift" style={{ width: '90%', maxWidth: '700px', display: 'block', margin: '2rem auto 2.5rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/sir jan awarding.jpg', 'Sir Jan Awarding')} />
           <div style={{ fontStyle: 'italic' }}>
             When the awarding ceremony came, I was no longer there. I had already returned to my hometown, away from the bright lights of the convention hall.<br /><br />
-            That evening, my phone lit up with a message from her. She told me with joy that Sir Jan had won the championship. It was her mentor who triumphed, and I was so happy for her. The energy we poured into supporting him was not wasted. I felt even more grateful knowing I had told her before the competition began that he would win, and he truly did.<br /><br />
+            That afternoon, my phone lit up with a message from her. She told me with joy that Sir Jan had won the championship. It was her mentor who triumphed, and I was so happy for her. The energy we poured into supporting him was not wasted. I felt even more grateful knowing I had told her before the competition began that he would win, and he truly did.<br /><br />
             Though I wasn’t in the hall when the applause erupted, her pride and excitement reached me through her words, making me feel as if I was still there beside her.<br /><br />
             Sometimes, the moments you miss still find a way to reach your heart.
           </div>

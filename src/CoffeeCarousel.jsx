@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import coffeeData from './coffeeData';
 import './CoffeeCarousel.css';
+import './responsive.css';
 
 function CoffeeCarousel({ category, onImageClick }) {
   const coffees = coffeeData[category];

@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
+import './responsive.css';
 
 function App() {
   const navigate = useNavigate();
@@ -36,7 +36,9 @@ function App() {
           pointerEvents: showTagline ? 'auto' : 'none',
         }}
       >
-      Welcome to Taste of Tales, where every sip tells a story. Discover the brewing traditions and rich flavors of coffee in the Philippines that bring us together!
+      <p className="welcome-message" style={{ fontStyle: 'italic', color: '#7e5f3b', fontSize: '1.5rem', margin: '0 0 2.5rem 5vw', textAlign: 'center', maxWidth: '90%', lineHeight: '1.5', display: 'block', width: '100%' }}>
+        Welcome to Taste of Tales, where every sip tells a story. Discover the brewing traditions and rich flavors of coffee in the Philippines that bring us together!
+      </p>
       </div>
   <div className="w-full flex justify-center mb-12" style={{ marginTop: '3.5rem' }}>
         <button

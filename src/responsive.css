@@ -1,0 +1,143 @@
+/* Responsive styles for all pages */
+
+@media (max-width: 900px) {
+  .about-img-lift {
+    max-width: 98vw !important;
+    width: 98vw !important;
+  }
+  .about-img-fullscreen-bg {
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 2.5rem;
+  }
+  .about-img-flip {
+    max-width: 98vw !important;
+    max-height: 80vh !important;
+    border-radius: 1.2rem !important;
+  }
+  header {
+    font-size: 1.3rem !important;
+    padding: 0.3rem 0 0.5rem 0 !important;
+  }
+  h1 {
+    font-size: 2.2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .competition-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+  main {
+    padding: 1rem !important;
+  }
+  footer {
+    font-size: 1rem !important;
+    padding: 1.2rem 0 1rem 0 !important;
+  }
+  /* CoffeeCarousel responsive stacking */
+  .carousel-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 2rem !important;
+  }
+  .carousel {
+    width: 98vw !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+  }
+  /* App.jsx - Make 5.png a bit larger in responsive mode */
+  img[src*="5.png"] {
+    max-width: 320px !important;
+    width: 90vw !important;
+    height: auto !important;
+  }
+  /* App.jsx - Enlarge welcome message font size in responsive mode */
+  .welcome-message {
+    font-size: 1.35rem !important;
+  }
+  /* Responsive header navigation links font size - smaller */
+  .nav-link {
+    font-size: 1rem !important;
+    padding: 0.15rem 0.6rem !important;
+  }
+  /* Responsive header home icon size */
+  .home-icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+  /* SecondPage.jsx - Enlarge Pacifico font heading in responsive mode */
+  .secondpage-heading {
+    font-size: 3.2rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 1rem !important;
+    padding: 0.2rem 0 0.3rem 0 !important;
+  }
+  h1 {
+    font-size: 1.3rem !important;
+    margin-bottom: 1rem !important;
+  }
+  main {
+    padding: 0.5rem !important;
+  }
+  .about-img-lift {
+    max-width: 99vw !important;
+    width: 99vw !important;
+    border-radius: 0.7rem !important;
+  }
+  .about-img-flip {
+    border-radius: 0.7rem !important;
+  }
+  .competition-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.3rem !important;
+  }
+  footer {
+    font-size: 0.9rem !important;
+    padding: 0.7rem 0 0.7rem 0 !important;
+  }
+  /* CoffeeCarousel responsive stacking */
+  .carousel-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 1.2rem !important;
+  }
+  .carousel {
+    width: 99vw !important; 
+    max-width: 340px !important;
+    margin: 0 auto !important;
+  }
+  /* App.jsx - Make 5.png a bit larger in responsive mode */
+  img[src*="5.png"] {
+    max-width: 360px !important;
+    width: 120vw !important;
+    height: auto !important;
+  }
+  /* App.jsx - Enlarge welcome message font size in responsive mode */
+  .welcome-message {
+    font-size: 3rem !important;
+  }
+  /* Responsive header navigation links font size - smaller */
+  .nav-link {
+    font-size: 0.5rem !important;
+    padding: 1.5rem 0.3rem !important;
+  }
+  /* Responsive header home icon size */
+  .home-icon {
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+  }
+  /* SecondPage.jsx - Enlarge Pacifico font heading in responsive mode */
+  .secondpage-heading {
+    font-size: 2.2rem !important;
+  }
+}
+
+/* Add more selectors for other pages as needed */

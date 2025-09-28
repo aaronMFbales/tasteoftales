@@ -1,7 +1,7 @@
-
 import React from "react";
 import { Link } from 'react-router-dom';
 import './WheelPage.css';
+import './responsive.css';
 import D3FlavorWheel from "./D3FlavorWheel";
 
 
@@ -64,7 +64,7 @@ export default function WheelPage() {
           position: 'fixed',
           top: 0,
           left: 0,
-          zIndex: 9999,
+          zIndex: 100000,
           display: 'flex',
           alignItems: 'center',
           boxShadow: '0 8px 32px 0 #a0521c88, 0 2px 0 #d6ad60',
@@ -88,7 +88,7 @@ export default function WheelPage() {
           </nav>
         </div>
       </header>
-      <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
         <h1 style={{
           textAlign: 'center',
           fontFamily: 'sans-serif',
@@ -106,7 +106,7 @@ export default function WheelPage() {
         </h1>
         <button
           style={{
-            marginBottom: '1.2rem',
+            marginBottom: '2rem',
             padding: '0.7rem 1.6rem',
             fontSize: '1.2rem',
             background: '#967259',
@@ -118,6 +118,7 @@ export default function WheelPage() {
             boxShadow: '0 2px 8px #96725944',
             transition: 'background 0.2s',
             zIndex: 10000,
+            position: 'relative',
           }}
           onClick={handleFullScreen}
         >
