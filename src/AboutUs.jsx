@@ -250,10 +250,10 @@ export default function AboutUs() {
           <div style={{ fontStyle: 'italic' }}>
             August 30, 2025 became more than a date. It became a memory I will never forget.<br /><br />
             I saw her first at the entrance of the convention hall. She was already there before me, her presence lighting up the space in a way no spotlight could. My heart swelled with gratitude when she introduced me to Sir Jan, her mentor, as well as the people she knew in the community. In that moment, the event felt less like work and more like being welcomed into a family.<br /><br />
-            {/* pc 1.jpg above roaming together */}
+          
             <img src="/Personal Chapter 1.webp" alt="Personal Chapter 1" className="about-img-lift" style={{ width: '70%', maxWidth: '400px', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Personal Chapter 1.webp', 'Personal Chapter 1')} />
             We roamed together through the expo, wandering between booths and sharing discoveries. I treated her to iced coffee, and though it was a simple gesture, it meant the world to me. Each sip was sweetened not only by the brew but by her company. I could not stop smiling during those moments. The conversations flowed easily, the laughter felt effortless, and the time seemed to move too quickly.<br /><br />
-            {/* pc 2.jpg above Public Cupping Session */}
+           
             <img src="/Personal Chapter 2.webp" alt="Personal Chapter 2" className="about-img-lift" style={{ width: '70%', maxWidth: '400px', aspectRatio: '16/9', height: 'auto', objectFit: 'cover', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Personal Chapter 2.webp', 'Personal Chapter 2')} />
             Later, we stood together at the Public Cupping Session. Dozens of cups were arranged, steam rising softly like whispers in the air. We leaned closer, slurping, tasting, comparing notes. She spoke of citrus undertones, of chocolate lingering aftertaste, of subtle spice hidden in the brew. Her words carried more than knowledge; they carried wonder.<br /><br />
             Through her, coffee came alive. What was once only a drink to me transformed into an experience. Each cup became a story, each aroma a memory, each sip a connection.
@@ -267,7 +267,7 @@ export default function AboutUs() {
             <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', margin: '2rem 0' }}>
               <img src="/Ingredient 1.webp" alt="Ingredient 1" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient 1.webp', 'Ingredient 1')} />
               <img src="/Ingredient 2.webp" alt="Ingredient 2" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient 2.webp', 'Ingredient 2')} />
-              <img src="/Ingredient 3.jpg" alt="Ingredient 3" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient 3.jpg', 'Ingredient 3')} />
+              <img src="/Ingredient 3.webp" alt="Ingredient 3" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient 3.webp', 'Ingredient 3')} />
             </div>
             What made his drink remarkable was not only its fusion of whiskey, banana liqueur, Disaronno, crème de cacao, and espresso. It was how the vessel transformed it. In clay, the flavor softened. In glass, it grew sharper. In ceramic, it deepened. The drink became a reflection of life itself. The same story told in different voices, depending on who holds it.<br /><br />
             {/* Tilawi video above the naming sentence */}
@@ -278,7 +278,7 @@ export default function AboutUs() {
         </div>
         <div style={{ marginBottom: '2.5rem' }}>
             <div style={{ fontSize: '3rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>The Awarding</b></div>
-          <img src="/Sir Jan Awarding.jpg" alt="Sir Jan Awarding" className="about-img-lift" style={{ width: '90%', maxWidth: '700px', display: 'block', margin: '2rem auto 2.5rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Sir Jan Awarding.jpg', 'Sir Jan Awarding')} />
+          <img src="/Sir Jan Awarding.webp" alt="Sir Jan Awarding" className="about-img-lift" style={{ width: '90%', maxWidth: '700px', display: 'block', margin: '2rem auto 2.5rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Sir Jan Awarding.webp', 'Sir Jan Awarding')} />
           <div style={{ fontStyle: 'italic' }}>
             When the awarding ceremony came, I was no longer there. I had already returned to my hometown, away from the bright lights of the convention hall.<br /><br />
             That afternoon, my phone lit up with a message from her. She told me with joy that Sir Jan had won the championship. It was her mentor who triumphed, and I was so happy for her. The energy we poured into supporting him was not wasted. I felt even more grateful knowing I had told her before the competition began that he would win, and he truly did.<br /><br />
