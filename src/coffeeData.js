@@ -4,7 +4,7 @@ const coffeeData = {
   hot: [
     {
       name: 'Americano',
-  image: '/Americano.jpg',
+  image: '/Americano.webp',
       description: 'Espresso shot diluted with hot water.',
       ingredients: ['Espresso', 'Hot Water']
     },
