@@ -194,7 +194,7 @@ function Hero() {
           <h1 className="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg mb-6" style={{ color: '#7e5f3b' }}>
             <span className="every-cup-title-italic">Every Cup Tells a Story</span>
           </h1>
-          <img src="/6.png" alt="Decorative" className="mx-auto" style={{ maxWidth: '1000px', width: '100%', height: 'auto', display: 'block' }} />
+          <img src="/6.webp" alt="Decorative" className="mx-auto" style={{ maxWidth: '1000px', width: '100%', height: 'auto', display: 'block' }} />
           <div className="every-cup-description text-center" style={{ color: '#755c47', fontSize: '1.5rem', fontWeight: 400, maxWidth: '1100px' }}>
             <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '2.5rem', fontWeight: 700, display: 'block', marginBottom: '0.5rem' }}>
               “Every Cup Tells a Story”
@@ -219,14 +219,14 @@ function Hero() {
               {/* 1st box */}
               <a href="https://coffeeforpeace.com/2025/07/28/celebrating-kape-partnering-for-justice-through-coffee/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
-                  <img src="/kpc.png" alt="Kape Partnering for Justice" />
+                  <img src="/kpc.webp" alt="Kape Partnering for Justice" />
                   <div className="coffee-story-title small">Kape Partnering for Justice</div>
                 </div>
               </a>
               {/* 2nd box */}
               <a href="https://www.damngoodtravels.com/2023/12/a-coffee-story-connecting-over-cups.html" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
-                  <img src="/A_Coffee_Story.jpg" alt="A Coffee Story" />
+                  <img src="/A_Coffee_Story.webp" alt="A Coffee Story" />
                   <div className="coffee-story-title small">A Coffee Story: Connecting Over Cups</div>
                 </div>
               </a>
@@ -240,7 +240,7 @@ function Hero() {
               {/* 4th box */}
               <a href="https://oxfam.org.ph/davao-coffee-shop-helps-lift-farmers-out-of-poverty-2/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
-                  <img src="/Oxfam_Davao_Coffee_Shop.jpg" alt="Oxfam Davao Coffee Shop" />
+                  <img src="/Oxfam_Davao_Coffee_Shop.webp" alt="Oxfam Davao Coffee Shop" />
                   <div className="coffee-story-title small">Oxfam Davao Coffee Shop</div>
                 </div>
               </a>

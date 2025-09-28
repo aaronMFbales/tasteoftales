@@ -200,20 +200,20 @@ export default function AboutUs() {
   <h1 style={{ color: '#7e5f3b', fontFamily: 'Pacifico, cursive', fontSize: '5rem', marginBottom: '4rem', textAlign: 'center' }}>The Story behind everything</h1>
   <div style={{ color: '#634832', fontSize: '1.25rem', maxWidth: '1200px', width: '100%', margin: '0 auto', textAlign: 'center', lineHeight: '2', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{ marginBottom: '2.5rem' }}>
-            <img src="/Coffee_Expo_Poster.jpg" alt="Coffee Expo Poster" className="about-img-lift" style={{ width: '70%', maxWidth: '350px', borderRadius: '1.5rem', marginBottom: '2rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Coffee_Expo_Poster.jpg', 'Coffee Expo Poster')} />
+            <img src="/Coffee_Expo_Poster.webp" alt="Coffee Expo Poster" className="about-img-lift" style={{ width: '70%', maxWidth: '350px', borderRadius: '1.5rem', marginBottom: '2rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Coffee_Expo_Poster.webp', 'Coffee Expo Poster')} />
             <div style={{ fontSize: '4rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>The Stage Was Set</b></div>
            <div style={{ fontStyle: 'italic' }}>It began with a post.<br />On the official page of the Regional Coffee Expo appeared the words, “Ready, Set, Brew!”, a call that stirred excitement across the community.<br /><br />The announcement carried with it more than just information. It marked the arrival of something extraordinary: the Regional Coffee Expo 2025, set to unfold at the Davao Convention and Trade Center from August 28 - 30.<br /><br />At first, it felt like just another event in the city, one of many that come and go. Yet for those who lived and breathed coffee, it was something far greater. It was a celebration of flavors, cultures, and spirits.<br /><br />Looking back now, I realize that it was not only a stage for competitions or exhibits. It was the place where stories quietly took root, where cups carried more than liquid, and where my own heart would begin a journey it never expected.</div>
         </div>
     <div style={{ marginBottom: '2.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem' }}>
-              <img src="/DTI_Partner.jpg" alt="DTI Partner" className="about-img-lift" style={{ width: '70%', maxWidth: '350px', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/DTI_Partner.jpg', 'DTI Partner')} />
-              <img src="/OJT_DTI_Expo.jpg" alt="OJT DTI Expo" className="about-img-lift" style={{ width: '100%', maxWidth: '500px', minWidth: '350px', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/OJT_DTI_Expo.jpg', 'OJT DTI Expo')} />
+              <img src="/DTI_Partner.webp" alt="DTI Partner" className="about-img-lift" style={{ width: '70%', maxWidth: '350px', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/DTI_Partner.webp', 'DTI Partner')} />
+              <img src="/OJT_DTI_Expo.webp" alt="OJT DTI Expo" className="about-img-lift" style={{ width: '100%', maxWidth: '500px', minWidth: '350px', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/OJT_DTI_Expo.webp', 'OJT DTI Expo')} />
             </div>
             <div style={{ fontSize: '3rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>My Place in the Story</b></div>
           <div style={{ fontStyle: 'italic' }}>At that time, I was serving as an intern at DTI–DCFO. Fate placed me in the middle of it all because DTI happened to be one of the event partners. My task was to assist the media team, capturing moments, gathering photos and videos, and supporting the event’s coverage.<br /><br />It seemed like ordinary work at first. Yet as soon as I stepped into the convention hall, I felt something shift. The air carried the aroma of freshly roasted beans. The sound of grinders blended with conversations between farmers, roasters, and baristas. In that space, I was no longer only an intern fulfilling responsibilities. I became a witness to stories being told in every cup, stories that I never knew could move me.</div>
         </div>
         <div style={{ marginBottom: '2.5rem' }}>
-            <img src="/Expo_Opening.jpg" alt="Expo Opening" className="about-img-lift" style={{ width: '70%', maxWidth: '500px', borderRadius: '1.5rem', marginBottom: '2rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Expo_Opening.jpg', 'Expo Opening')} />
+            <img src="/Expo_Opening.webp" alt="Expo Opening" className="about-img-lift" style={{ width: '70%', maxWidth: '500px', borderRadius: '1.5rem', marginBottom: '2rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Expo_Opening.webp', 'Expo Opening')} />
             <div style={{ fontSize: '2.7rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Opening the Expo</b></div>
           <div style={{ fontStyle: 'italic' }}>When the doors opened on August 28, the atmosphere was alive. Rows of booths filled the hall, each carrying beans with origins from mountains and islands across the region. The farmers stood proudly, their faces etched with patience and devotion, each harvest carrying the essence of their land.<br /><br />Everywhere I turned, there was something new to discover. Basilan beans spoke of boldness, Sulu coffee carried resilience, and other roasts told of soil, sunlight, and weather. It felt as though Mindanao itself was speaking through every aroma and every sip.<br /><br />The expo was not only about coffee. It was about passion, about stories poured into cups, and about dreams shared openly with strangers who, for a brief moment, became companions.</div>
         </div>
@@ -233,11 +233,11 @@ export default function AboutUs() {
               {[1,2,3,4,5,6,7,8,9].map(num => (
                   <img
                     key={num}
-                    src={`/Competition ${num}.jpg`}
+                    src={`/Competition ${num}.webp`}
                     alt={`Competition ${num}`}
                     className="about-img-lift"
                     style={{ width: '95%', aspectRatio: '16/9', height: 'auto', objectFit: 'cover', borderRadius: '1rem', boxShadow: '0 2px 20px #a0521c44' }}
-                    onClick={e => handleImgClick(`/Competition ${num}.jpg`, `Competition ${num}`)}
+                    onClick={e => handleImgClick(`/Competition ${num}.webp`, `Competition ${num}`)}
                   />
               ))}
             </div>
@@ -251,22 +251,22 @@ export default function AboutUs() {
             August 30, 2025 became more than a date. It became a memory I will never forget.<br /><br />
             I saw her first at the entrance of the convention hall. She was already there before me, her presence lighting up the space in a way no spotlight could. My heart swelled with gratitude when she introduced me to Sir Jan, her mentor, as well as the people she knew in the community. In that moment, the event felt less like work and more like being welcomed into a family.<br /><br />
             {/* pc 1.jpg above roaming together */}
-            <img src="/Personal_Chapter_1.jpg" alt="Personal Chapter 1" className="about-img-lift" style={{ width: '70%', maxWidth: '400px', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Personal_Chapter_1.jpg', 'Personal Chapter 1')} />
+            <img src="/Personal_Chapter_1.webp" alt="Personal Chapter 1" className="about-img-lift" style={{ width: '70%', maxWidth: '400px', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Personal_Chapter_1.webp', 'Personal Chapter 1')} />
             We roamed together through the expo, wandering between booths and sharing discoveries. I treated her to iced coffee, and though it was a simple gesture, it meant the world to me. Each sip was sweetened not only by the brew but by her company. I could not stop smiling during those moments. The conversations flowed easily, the laughter felt effortless, and the time seemed to move too quickly.<br /><br />
             {/* pc 2.jpg above Public Cupping Session */}
-            <img src="/Personal_Chapter_2.jpg" alt="Personal Chapter 2" className="about-img-lift" style={{ width: '70%', maxWidth: '400px', aspectRatio: '16/9', height: 'auto', objectFit: 'cover', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Personal_Chapter_2.jpg', 'Personal Chapter 2')} />
+            <img src="/Personal_Chapter_2.webp" alt="Personal Chapter 2" className="about-img-lift" style={{ width: '70%', maxWidth: '400px', aspectRatio: '16/9', height: 'auto', objectFit: 'cover', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Personal_Chapter_2.webp', 'Personal Chapter 2')} />
             Later, we stood together at the Public Cupping Session. Dozens of cups were arranged, steam rising softly like whispers in the air. We leaned closer, slurping, tasting, comparing notes. She spoke of citrus undertones, of chocolate lingering aftertaste, of subtle spice hidden in the brew. Her words carried more than knowledge; they carried wonder.<br /><br />
             Through her, coffee came alive. What was once only a drink to me transformed into an experience. Each cup became a story, each aroma a memory, each sip a connection.
           </div>
         </div>
     <div style={{ marginBottom: '2.5rem' }}>
-  <img src="/Sir_Jan.jpg" alt="Sir Jan" className="about-img-lift" style={{ width: '55%', maxWidth: '320px', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Sir_Jan.jpg', 'Sir Jan')} />
+  <img src="/Sir_Jan.webp" alt="Sir Jan" className="about-img-lift" style={{ width: '55%', maxWidth: '320px', display: 'block', margin: '2rem auto', borderRadius: '1.5rem', boxShadow: '0 4px 24px #a0521c44' }} onClick={e => handleImgClick('/Sir_Jan.webp', 'Sir Jan')} />
       <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#7e5f3b', marginBottom: '1.2rem', fontStyle: 'italic', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}><b>Coffee in Spirit — Sir Jan’s Story</b></div>
           <div style={{ fontStyle: 'italic' }}>That same day, we witnessed Sir Jan step onto the stage for the Coffee in Spirit competition. He carried with him not just ingredients but months of effort, trial, and inspiration. She told me of the struggles they went through, how they searched for balance, experimenting with flavors until realization struck: taste is never fixed, it is shaped by perception.<br /><br />
             {/* Ingredients images */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', margin: '2rem 0' }}>
-              <img src="/Ingredient_1.jpg" alt="Ingredient 1" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient_1.jpg', 'Ingredient 1')} />
-              <img src="/Ingredient_2.jpg" alt="Ingredient 2" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient_2.jpg', 'Ingredient 2')} />
+              <img src="/Ingredient_1.webp" alt="Ingredient 1" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient_1.webp', 'Ingredient 1')} />
+              <img src="/Ingredient_2.webp" alt="Ingredient 2" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient_2.webp', 'Ingredient 2')} />
               <img src="/Ingredient_3.jpg" alt="Ingredient 3" className="about-img-lift" style={{ width: '32%', maxWidth: '220px', borderRadius: '1rem', boxShadow: '0 2px 12px #a0521c44', objectFit: 'cover' }} onClick={e => handleImgClick('/Ingredient_3.jpg', 'Ingredient 3')} />
             </div>
             What made his drink remarkable was not only its fusion of whiskey, banana liqueur, Disaronno, crème de cacao, and espresso. It was how the vessel transformed it. In clay, the flavor softened. In glass, it grew sharper. In ceramic, it deepened. The drink became a reflection of life itself. The same story told in different voices, depending on who holds it.<br /><br />
