@@ -28,31 +28,31 @@ const coffeeData = {
     },
     {
       name: 'Hot Chocolate',
-  image: '/Hot Chocolate.jpg',
+  image: '/Hot_Chocolate.jpg',
       description: 'Chocolate and milk, cozy and energizing.',
       ingredients: ['Milk', 'Cocoa/Chocolate Syrup', 'Sugar (optional)', 'Whipped Cream (optional)']
     },
     {
       name: 'Chai Latte',
-  image: '/Chai Latte.jpg',
+  image: '/Chai_Latte.jpg',
       description: 'Spiced tea with milk, ginger, and cardamom.',
       ingredients: ['Black Tea (Chai Blend)', 'Milk', 'Spices (Cinnamon, Ginger, Cardamom, Cloves)', 'Sweetener (optional)']
     },
     {
       name: 'Matcha Latte',
-  image: '/Matcha Latte.jpg',
+  image: '/Matcha_Latte.jpg',
       description: 'Green matcha tea with milk, lightly sweet.',
       ingredients: ['Matcha Powder', 'Milk', 'Sweetener (optional)']
     },
     {
       name: 'Seasonal Brew',
-  image: '/Seasonal Brew.jpg',
+  image: '/Seasonal_Brew.jpg',
       description: 'Special blends with caramel, fruit, or chocolate tones.',
       ingredients: ['Brewed Coffee', 'Seasonal Syrup or Spices']
     },
     {
       name: 'Black Tea',
-  image: '/Black Tea.jpg',
+  image: '/Black_Tea.jpg',
       description: 'Classic Camellia leaves, sometimes fruit-flavored.',
       ingredients: ['Black Tea Leaves', 'Water']
     }
@@ -60,37 +60,37 @@ const coffeeData = {
   cold: [
     {
       name: 'Iced Latte',
-  image: '/Iced Latte.jpg',
+  image: '/Iced_Latte.jpg',
       description: 'Espresso and milk over ice.',
       ingredients: ['Espresso', 'Cold Milk', 'Ice', 'Syrup (optional)']
     },
     {
       name: 'Iced Mocha Latte',
-  image: '/Iced Mocha Latte.jpg',
+  image: '/Iced_Mocha_Latte.jpg',
       description: 'Chilled latte with chocolate twist.',
       ingredients: ['Espresso', 'Cold Milk', 'Ice', 'Chocolate Syrup', 'Whipped Cream (optional)']
     },
     {
       name: 'Caramel Frappuccino',
-  image: '/Caramel Frappuccino.jpg',
+  image: '/Caramel_Frappuccino.jpg',
       description: 'Blended iced coffee with caramel syrup and whipped cream.',
       ingredients: ['Coffee/Espresso', 'Ice', 'Milk', 'Caramel Syrup', 'Whipped Cream']
     },
     {
       name: 'Mocha Frappuccino',
-  image: '/Mocha Frappuccino.jpg',
+  image: '/Mocha_Frappuccino.jpg',
       description: 'Blended iced coffee with chocolate syrup and whipped cream.',
       ingredients: ['Coffee/Espresso', 'Ice', 'Milk', 'Chocolate Syrup', 'Whipped Cream']
     },
     {
       name: 'Iced Espresso',
-  image: '/Iced Espresso.jpg',
+  image: '/Iced_Espresso.jpg',
       description: 'Espresso over ice, served straight or with milk/cream.',
       ingredients: ['Espresso', 'Ice', 'Sugar (optional)', 'Milk or Cream (optional)']
     },
     {
       name: 'Cold Brew',
-  image: '/Cold Brew.jpg',
+  image: '/Cold_Brew.jpg',
       description: 'Long-steeped smooth coffee with ice.',
       ingredients: ['Coarsely Ground Coffee', 'Cold Water', 'Ice']
     },
@@ -102,25 +102,25 @@ const coffeeData = {
     },
     {
       name: 'Mazagran',
-  image: '/mazagran.jpeg',
+  image: '/Mazagran.jpeg',
       description: 'Espresso with lemon, sugar, and optional rum.',
       ingredients: ['Espresso', 'Lemon Juice', 'Sugar', 'Ice', 'Rum (optional)']
     },
     {
       name: 'Banana Iced Coffee',
-  image: '/Banana Iced Coffee.jpg',
+  image: '/Banana_Iced_Coffee.jpg',
       description: 'Coffee blended with banana and ice.',
       ingredients: ['Coffee', 'Banana', 'Ice', 'Milk or Yogurt (optional)', 'Honey (optional)']
     },
     {
       name: 'Apple Iced Coffee',
-  image: '/Apple Iced Coffee.jpg',
+  image: '/Apple_Iced_Coffee.jpg',
       description: 'Coffee with apple and cinnamon notes.',
       ingredients: ['Coffee', 'Apple Juice or Purée', 'Cinnamon', 'Ice']
     },
     {
       name: 'Sprinkle Iced Coffee',
-  image: '/Sprinkle Iced Coffee.jpg',
+  image: '/Sprinkle_Iced_Coffee.jpg',
       description: 'Fun iced coffee topped with sprinkles, whipped cream, and foamed milk.',
       ingredients: ['Coffee', 'Milk (optional)', 'Ice', 'Whipped Cream', 'Sprinkles', 'Syrup (optional)']
     }

@@ -180,7 +180,7 @@ function Hero() {
           <div style={{ display: 'inline-block', border: '6px solid #634832', borderRadius: '1rem', padding: '1rem', background: '#e5d3bc', margin: 0, marginBottom: '4rem' }}>
             <video
               ref={videoRef}
-              src="/Coffee Video Montage.mp4"
+              src="/Coffee_Video_Montage.mp4"
               controls
               autoPlay
               loop
@@ -226,7 +226,7 @@ function Hero() {
               {/* 2nd box */}
               <a href="https://www.damngoodtravels.com/2023/12/a-coffee-story-connecting-over-cups.html" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
-                  <img src="/A Coffee Story.jpg" alt="A Coffee Story" />
+                  <img src="/A_Coffee_Story.jpg" alt="A Coffee Story" />
                   <div className="coffee-story-title small">A Coffee Story: Connecting Over Cups</div>
                 </div>
               </a>
@@ -240,7 +240,7 @@ function Hero() {
               {/* 4th box */}
               <a href="https://oxfam.org.ph/davao-coffee-shop-helps-lift-farmers-out-of-poverty-2/" target="_blank" rel="noopener noreferrer" className="coffee-story-box">
                 <div className="coffee-story-img-frame">
-                  <img src="/Oxfam Davao Coffee Shop.jpg" alt="Oxfam Davao Coffee Shop" />
+                  <img src="/Oxfam_Davao_Coffee_Shop.jpg" alt="Oxfam Davao Coffee Shop" />
                   <div className="coffee-story-title small">Oxfam Davao Coffee Shop</div>
                 </div>
               </a>
