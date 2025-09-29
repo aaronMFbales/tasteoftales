@@ -483,10 +483,10 @@ export default function SecondPage() {
         </Link>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-            <Link to="/second" className="nav-link">Home</Link>
-            <Link to="/coffee" className="nav-link">Coffee</Link>
-              <Link to="/wheel" className="nav-link">Wheel</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
+            <Link to="/second" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link>
+            <Link to="/coffee" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Coffee</Link>
+            <Link to="/wheel" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Wheel</Link>
+            <Link to="/about" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
           </nav>
         </div>
       </header>
