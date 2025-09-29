@@ -21,7 +21,7 @@ function App() {
       style={{ background: '#ece0d1', minHeight: '100vh', width: '100vw' }}
     >
   <div style={{ height: '1.5rem' }} />
-  <img src="/5.png" alt="Taste of Tales Logo" className="h-[50rem] w-auto hover-slow" style={{ marginTop: '-2.5rem' }} />
+  <img src="/5.png" alt="Taste of Tales Logo" className="h-[50rem] w-auto hover-slow" style={{ marginTop: '-6rem' }} />
       <div
         className="mt-8 mb-8 px-4 max-w-xl text-center tasteoftales-tagline"
         style={{
@@ -43,7 +43,7 @@ function App() {
   <div className="w-full flex justify-center mb-12" style={{ marginTop: '3.5rem' }}>
         <button
           className={`w-32 h-32 rounded-full bg-amber-700 text-xl font-bold transition-all duration-200 flex items-center justify-center sip-btn${showBtn ? ' visible' : ''}`}
-          onClick={() => navigate('/second')}
+          onClick={() => { navigate('/second'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           style={{ opacity: showBtn ? 1 : 0, pointerEvents: showBtn ? 'auto' : 'none', transition: 'opacity 0.7s', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}
         >
           Take a sip
