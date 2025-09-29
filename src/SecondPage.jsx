@@ -194,7 +194,7 @@ function Hero() {
           <h1 className="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg mb-6" style={{ color: '#7e5f3b' }}>
             <span className="every-cup-title-italic">Every Cup Tells a Story</span>
           </h1>
-          <img src="/6.webp" alt="Decorative" className="mx-auto" style={{ maxWidth: '1000px', width: '100%', height: 'auto', display: 'block' }} />
+          <img src="/6.png" alt="Decorative" className="mx-auto" style={{ maxWidth: '1000px', width: '100%', height: 'auto', display: 'block' }} />
           <div className="every-cup-description text-center" style={{ color: '#755c47', fontSize: '1.5rem', fontWeight: 400, maxWidth: '1100px' }}>
             <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '2.5rem', fontWeight: 700, display: 'block', marginBottom: '0.5rem' }}>
               “Every Cup Tells a Story”
