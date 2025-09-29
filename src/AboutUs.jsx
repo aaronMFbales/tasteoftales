@@ -271,7 +271,7 @@ export default function AboutUs() {
             </div>
             What made his drink remarkable was not only its fusion of whiskey, banana liqueur, Disaronno, crème de cacao, and espresso. It was how the vessel transformed it. In clay, the flavor softened. In glass, it grew sharper. In ceramic, it deepened. The drink became a reflection of life itself. The same story told in different voices, depending on who holds it.<br /><br />
             {/* Tilawi video above the naming sentence */}
-            <video src="/Tilawi_Video.mp4" autoPlay loop muted style={{ width: '70%', maxWidth: '320px', display: 'block', margin: '2rem auto', borderRadius: '1.2rem', boxShadow: '0 2px 16px #a0521c44', background: '#000' }} />
+            <video src="/Tilawi Video.mp4" autoPlay loop muted style={{ width: '70%', maxWidth: '320px', display: 'block', margin: '2rem auto', borderRadius: '1.2rem', boxShadow: '0 2px 16px #a0521c44', background: '#000' }} />
             He called it “Tilawi.” A drink crafted with both science and soul, revealed in the quiet drama of dry ice mist curling around it like memory made visible.<br /><br />
             He explained that Tilawi was chosen to highlight locality. In the Philippines, whenever we create something in line with our own taste, whether a dish or a drink, it is often offered with the word “Tilawi,” meaning “go ahead, try it.” It is more than just a name, it is an invitation to experience and connect.<br /><br />
             To witness it was to realize that coffee, like love, can be more than taste. It can be art, philosophy, and spirit all at once.</div>
