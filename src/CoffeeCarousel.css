@@ -486,17 +486,22 @@
 /* Coffee Fact Box Styles */
 /* Coffee Fact Box Styles */
 .coffee-fact-box {
-  background: none;
+  background: #f5e6d6;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px rgba(150,114,89,0.10);
   padding: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: center;
 }
 .coffee-fact-title {
   font-family: 'Pacifico', cursive;
   color: #967259;
   font-size: 1.3rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 .coffee-fact-btn {
@@ -516,7 +521,7 @@
   box-shadow: 0 4px 16px rgba(150,114,89,0.18);
 }
 .coffee-fact-text {
-  min-height: 2.5rem;
+  min-height: 4.5rem;
   font-style: italic;
   color: #6d4c2b;
   font-size: 1.6rem;
