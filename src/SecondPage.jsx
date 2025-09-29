@@ -179,8 +179,7 @@ function Hero() {
         <div className="flex justify-center mt-8">
           <div style={{ display: 'inline-block', border: '6px solid #634832', borderRadius: '1rem', padding: '1rem', background: '#e5d3bc', margin: 0, marginBottom: '4rem' }}>
             <video
-              ref={videoRef}
-              src="/Coffee Video Montage.mp4"
+              src="/Coffee_Video_Montage.mp4"
               controls
               autoPlay
               loop
