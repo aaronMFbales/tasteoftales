@@ -245,6 +245,7 @@
 
 .carousel-indicators {
   margin-top: 1.2rem;
+  margin-left: 3rem; /* Move navigation indicators to the right */
 }
 .carousel-indicators span {
   display: inline-block;
