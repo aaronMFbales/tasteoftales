@@ -1,3 +1,7 @@
+/* Remove colored line background from tip */
+.coffee-fact-tip {
+  background: none !important;
+}
 /* Navigation link styles */
 .nav-link {
   color: #fff;
@@ -142,9 +146,9 @@
   box-shadow: 0 4px 40px rgba(150, 114, 89, 0.20);
   padding: 4rem 3rem 0 3rem;
   margin: 2.5rem auto 0 auto;
-  width: 520px;
-  min-width: 520px;
-  max-width: 520px;
+  width: 290px;
+  min-width: 290px;
+  max-width: 290px;
   text-align: center;
 }
 
@@ -203,9 +207,9 @@
 }
 
 .carousel-image {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
   background: #ece0d1;
   display: flex;
   align-items: center;
@@ -427,8 +431,8 @@
 }
 
 .carousel-image {
-  width: 240px;
-  height: 240px;
+  width: 170px;
+  height: 220px;
   border-radius: 50%;
   background: #ece0d1;
   display: flex;
@@ -482,7 +486,7 @@
 /* Coffee Fact Box Styles */
 /* Coffee Fact Box Styles */
 .coffee-fact-box {
-  background: #f5e6d6;
+  background: none;
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px rgba(150,114,89,0.10);
   padding: 1.5rem;
