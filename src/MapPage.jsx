@@ -102,7 +102,7 @@ function MapPage() {
         <h1 style={{
           textAlign: 'center',
           fontFamily: 'Pacifico, cursive',
-          fontSize: '2.5rem',
+          fontSize: '5rem',
           color: '#7a5a35',
           marginTop: '1.5rem', // moved up by reducing top margin
           marginBottom: '2rem',
