@@ -274,77 +274,9 @@ function Hero() {
         {/* Coffee Knowledge Hub Section */}
   <section className="coffee-knowledge-hub" style={{ marginTop: '1rem' }}>
    <h2 className="coffee-knowledge-hub-title" style={{ color: '#7e5f3b', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif' }}>Coffee Knowledge Hub</h2>
-          <div className="coffee-knowledge-hub-content">
-            {/* Coffee Origins */}
-            <div className="coffee-knowledge-card">
-              <h3>Coffee Origins</h3>
-              <div className="coffee-knowledge-map">
-                  <div style={{ marginBottom: '1rem' }}>
-                    <strong>{originsInfo[origin].title}</strong>
-                    <div style={{ marginTop: '0.5rem', color: '#634832', fontSize: '1rem', textAlign: 'center' }}>
-                      {originsInfo[origin].desc}
-                    </div>
-                    <div style={{ marginTop: '0.5rem', color: '#967259', fontSize: '0.98rem', fontWeight: 500, textAlign: 'center' }}>
-                      <span>Continent: {originsInfo[origin].continent}</span>
-                    </div>
-                  </div>
-                  <div className="coffee-knowledge-map-visual">
-                    <ComposableMap projectionConfig={{ scale: 110 }} width={160} height={240} style={{ width: '100%', height: '100%' }}>
-                      <ZoomableGroup center={mapCenters[origin]} zoom={mapZooms[origin]}>
-                        <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
-                          {({ geographies }) =>
-                            geographies.map(geo => {
-                              const countryNames = {
-                                Ethiopia: 'Ethiopia',
-                                Colombia: 'Colombia',
-                                Brazil: 'Brazil',
-                                Vietnam: 'Vietnam',
-                                Philippines: 'Philippines',
-                              };
-                              const isHighlighted = geo.properties.name === countryNames[origin];
-                              return (
-                                <Geography
-                                  key={geo.rsmKey}
-                                  geography={geo}
-                                  style={{
-                                    default: {
-                                      fill: isHighlighted ? '#d6ad60' : '#ece0d1',
-                                      stroke: '#634832',
-                                      strokeWidth: 0.5,
-                                      outline: 'none',
-                                    },
-                                    hover: {
-                                      fill: isHighlighted ? '#b6862c' : '#d6ad60',
-                                      outline: 'none',
-                                    },
-                                    pressed: {
-                                      fill: '#b6862c',
-                                      outline: 'none',
-                                    },
-                                  }}
-                                />
-                              );
-                            })
-                          }
-                        </Geographies>
-                      </ZoomableGroup>
-                    </ComposableMap>
-                  </div>
-              </div>
-              <div className="coffee-knowledge-origins-btns">
-                {Object.keys(originsInfo).map((key) => (
-                  <button
-                    key={key}
-                    className={origin === key ? 'active' : ''}
-                    onClick={() => setOrigin(key)}
-                  >
-                    {key}
-                  </button>
-                ))}
-              </div>
-            </div>
+          <div className="coffee-knowledge-hub-content" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
             {/* Brewing Methods */}
-            <div className="coffee-knowledge-card">
+            <div className="coffee-knowledge-card" style={{ minWidth: '340px', flex: '1 1 340px', maxWidth: '500px' }}>
               <h3>Brewing Methods</h3>
               <div className="coffee-knowledge-brew-btns">
                 <button
@@ -371,7 +303,7 @@ function Hero() {
               </div>
             </div>
             {/* Beans & Flavors - Table Layout */}
-            <div className="coffee-knowledge-card beans-flavors-table-card">
+            <div className="coffee-knowledge-card beans-flavors-table-card" style={{ minWidth: '340px', flex: '1 1 340px', maxWidth: '500px' }}>
               <h3 className="beans-flavors-title">Beans & Flavors</h3>
               <table className="beans-flavors-table">
                 <tbody>
@@ -435,7 +367,9 @@ function Hero() {
                   </div>
                 </div>
               )}
-              <CoffeeFactBox />
+              <div style={{ width: '100%', maxWidth: '600px', margin: '2rem auto 0 auto' }}>
+                <CoffeeFactBox />
+              </div>
             </div>
           </div>
         </section>
@@ -482,9 +416,11 @@ export default function SecondPage() {
           </svg>
         </Link>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '3.5rem' }}>
             <Link to="/second" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link>
             <Link to="/coffee" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Coffee</Link>
+            <Link to="/map" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Map</Link>
+            <Link to="/products" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Products</Link>
             <Link to="/wheel" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Wheel</Link>
             <Link to="/about" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
           </nav>
@@ -501,4 +437,4 @@ export default function SecondPage() {
   );
 }
 
-// ...existing code...
+
