@@ -112,6 +112,83 @@ function Hero() {
         </ol>
       </>
     ),
+    'French Press': (
+      <>
+        <div style={{ marginBottom: '0.7rem', fontWeight: 600, color: '#7e5f3b' }}>
+          <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.15rem' }}>Requirements:</span>
+          <ul style={{ margin: '0.3rem 0 0 1.2rem', color: '#634832', fontSize: '1rem', fontWeight: 400 }}>
+            <li>French Press (plunger pot)</li>
+            <li>Fresh coffee beans (18g)</li>
+            <li>Grinder (coarse)</li>
+            <li>Kettle (for hot water)</li>
+            <li>Scale (optional)</li>
+            <li>Spoon or stirrer</li>
+            <li>Mug</li>
+          </ul>
+        </div>
+        <strong>French Press Guide:</strong>
+        <ol>
+          <li>Heat water to 92–96°C (198–205°F).</li>
+          <li>Grind coffee coarse.</li>
+          <li>Add 18g coffee to French Press, pour 300ml hot water.</li>
+          <li>Stir gently, place lid with plunger pulled up.</li>
+          <li>Steep for 4 minutes.</li>
+          <li>Slowly press the plunger down.</li>
+          <li>Pour and enjoy!</li>
+        </ol>
+      </>
+    ),
+    'Cold Brew': (
+      <>
+        <div style={{ marginBottom: '0.7rem', fontWeight: 600, color: '#7e5f3b' }}>
+          <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.15rem' }}>Requirements:</span>
+          <ul style={{ margin: '0.3rem 0 0 1.2rem', color: '#634832', fontSize: '1rem', fontWeight: 400 }}>
+            <li>Cold brew jar or pitcher</li>
+            <li>Fresh coffee beans (20g)</li>
+            <li>Grinder (coarse)</li>
+            <li>Filter (cloth, paper, or mesh)</li>
+            <li>Water (200ml, room temp or cold)</li>
+            <li>Scale (optional)</li>
+          </ul>
+        </div>
+        <strong>Cold Brew Guide:</strong>
+        <ol>
+          <li>Grind coffee coarse.</li>
+          <li>Add 20g coffee to jar, pour 200ml cold/room-temp water.</li>
+          <li>Stir gently to saturate all grounds.</li>
+          <li>Cover and steep 12–24 hours in fridge.</li>
+          <li>Strain/filter into a clean jar or bottle.</li>
+          <li>Dilute with water or milk if desired.</li>
+          <li>Serve over ice and enjoy!</li>
+        </ol>
+      </>
+    ),
+    'Moka Pot': (
+      <>
+        <div style={{ marginBottom: '0.7rem', fontWeight: 600, color: '#7e5f3b' }}>
+          <span style={{ fontFamily: 'Pacifico, cursive', fontSize: '1.15rem' }}>Requirements:</span>
+          <ul style={{ margin: '0.3rem 0 0 1.2rem', color: '#634832', fontSize: '1rem', fontWeight: 400 }}>
+            <li>Moka Pot</li>
+            <li>Fresh coffee beans (16g)</li>
+            <li>Grinder (fine-medium, slightly coarser than espresso)</li>
+            <li>Kettle (optional, preheated water recommended)</li>
+            <li>Scale (optional)</li>
+            <li>Mug</li>
+          </ul>
+        </div>
+        <strong>Moka Pot Guide:</strong>
+        <ol>
+          <li>Grind coffee fine-medium.</li>
+          <li>Fill bottom chamber with hot water (up to safety valve).</li>
+          <li>Add 16g coffee into filter basket, level (don’t tamp).</li>
+          <li>Assemble Moka Pot tightly.</li>
+          <li>Place on medium heat, lid open.</li>
+          <li>Brew until coffee starts sputtering (~2–3 min).</li>
+          <li>Remove from heat immediately, stir coffee in top chamber.</li>
+          <li>Pour and enjoy!</li>
+        </ol>
+      </>
+    ),
   };
 
   // Coffee origins info with continent
@@ -296,6 +373,24 @@ function Hero() {
                   onClick={() => setBrewMethod('Espresso')}
                 >
                   Espresso
+                </button>
+                <button
+                  className={brewMethod === 'French Press' ? 'active' : ''}
+                  onClick={() => setBrewMethod('French Press')}
+                >
+                  French Press
+                </button>
+                <button
+                  className={brewMethod === 'Cold Brew' ? 'active' : ''}
+                  onClick={() => setBrewMethod('Cold Brew')}
+                >
+                  Cold Brew
+                </button>
+                <button
+                  className={brewMethod === 'Moka Pot' ? 'active' : ''}
+                  onClick={() => setBrewMethod('Moka Pot')}
+                >
+                  Moka Pot
                 </button>
               </div>
               <div className="coffee-knowledge-brew">
