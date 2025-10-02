@@ -47,11 +47,11 @@ function MapPage() {
 
   // Zoom level for each origin (zoomed in for country focus)
   const mapZooms = {
-    Ethiopia: 5.5,
-    Colombia: 5.5,
-    Brazil: 3.8,
-    Vietnam: 6.5,
-    Philippines: 7.2,
+  Ethiopia: 6,
+  Colombia: 6,
+  Brazil: 6,
+  Vietnam: 6.5,
+  Philippines: 7.2,
   };
 
   // ...existing code...
@@ -113,7 +113,7 @@ function MapPage() {
         {/* Coffee Origins Section - no container */}
   {/* Removed 'Coffee Origins' heading as requested */}
         <div style={{ marginBottom: '1rem', textAlign: 'center' }}>
-          <strong style={{ fontSize: '1.3rem', color: '#967259' }}>{originsInfo[origin].title}</strong>
+          <strong style={{ fontSize: '2.1rem', color: '#7a5a35', fontWeight: 700, letterSpacing: '0.08em' }}>{originsInfo[origin].title.toUpperCase()}</strong>
           <div style={{ marginTop: '0.5rem', color: '#634832', fontSize: '1rem' }}>
             {originsInfo[origin].desc}
           </div>
@@ -123,7 +123,17 @@ function MapPage() {
         </div>
         {/* Map container is now directly below the country description */}
         <div className="coffee-knowledge-map-visual" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 0 1.5rem 0' }}>
-          <div style={{ width: '160vw', maxWidth: '160vw', height: '65vh', borderRadius: '0', overflow: 'hidden', boxShadow: '0 2px 16px #a0521c22', background: '#fff', margin: '12rem -30vw 0 -30vw' }}>
+          <div style={{
+            width: '160vw',
+            maxWidth: '160vw',
+            height: '65vh',
+            borderRadius: '1.5rem',
+            overflow: 'hidden',
+            background: '#fff',
+            margin: '12rem -30vw 0 -30vw',
+            border: '4px solid #d6ad60',
+            boxShadow: '0 8px 32px 0 #a0521c55, 0 2px 16px #a0521c22',
+          }}>
             <ComposableMap projectionConfig={{ scale: 110 }} width={window.innerWidth * 1.6} height={window.innerHeight * 0.65} style={{ width: '100%', height: '100%' }}>
               <ZoomableGroup center={mapCenters[origin]} zoom={mapZooms[origin]}>
                 <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
@@ -190,6 +200,9 @@ function MapPage() {
               {key}
             </button>
           ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '1.5rem', color: '#7a5a35', fontSize: '1.15rem', fontWeight: 500 }}>
+          Scroll down and up to zoom in and out inside the map
         </div>
       </main>
     </div>
