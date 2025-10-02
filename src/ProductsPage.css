@@ -1,0 +1,98 @@
+/* Coffee product card styles for ProductsPage */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.product-card {
+  background: #fff7ed;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px #d6ad6088;
+  border: 2px solid #ece0d1;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.product-card:hover {
+  box-shadow: 0 8px 32px #a0521c88;
+}
+.product-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1.5px solid #d6ad60;
+  background: #ece0d1;
+}
+.product-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #8D4F2F;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.product-roaster {
+  font-size: 1.1rem;
+  color: #967259;
+  margin-bottom: 0.3rem;
+  font-style: italic;
+}
+.product-origin {
+  font-size: 1rem;
+  color: #a0521c;
+  margin-bottom: 0.3rem;
+}
+.product-details {
+  font-size: 0.98rem;
+  color: #5c4032;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.product-tasting {
+  font-size: 0.98rem;
+  color: #967259;
+  margin-bottom: 0.3rem;
+  font-style: italic;
+  text-align: center;
+}
+.product-price {
+  font-size: 1.1rem;
+  color: #8D4F2F;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.product-link {
+  margin-top: 0.7rem;
+  background: #8D4F2F;
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.product-link:hover {
+  background: #a0521c;
+}
+.product-availability {
+  font-size: 0.95rem;
+  color: #fff;
+  background: #a0521c;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.product-availability.no {
+  background: #bdbdbd;
+  color: #5c4032;
+}
