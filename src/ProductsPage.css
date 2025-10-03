@@ -1,24 +1,50 @@
 /* Coffee product card styles for ProductsPage */
-.product-list {
+/* Strict 3 rows x 5 columns grid, minimal spacing, full width */
+/* Strict 4 rows x 3 columns grid, minimal spacing, full width */
+/* Strict 4 rows x 3 columns grid, with larger gaps for visual separation */
+/* Strict 4 rows x 3 columns grid, with larger gaps for visual separation and side margins */
+/* Strict 4 rows x 3 columns grid, with moderate gaps and subtle side margins */
+.product-list.strict-grid.four-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2rem 4rem;
+  margin: 1rem 1vw 3rem 1vw; /* Subtle left/right margins */
+  width: auto;
+  max-width: 1600px;
+  justify-items: stretch;
+  align-items: stretch;
+  padding: 0;
+  box-sizing: border-box;
 }
-.product-card {
-  background: #fff7ed;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 24px #d6ad6088;
-  border: 2px solid #ece0d1;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+/* Compact product card for strict grid */
+/* 3D effect product card for strict grid */
+.product-card.compact {
+  background: linear-gradient(135deg, #fff 70%, #f5e6d6 100%);
+  border-radius: 1.1rem;
+  box-shadow:
+    0 6px 24px rgba(150, 114, 89, 0.18), /* deep shadow for 3D */
+    0 1.5px 0.5px rgba(214, 173, 96, 0.12) inset, /* highlight edge */
+    0 -2px 8px rgba(214, 173, 96, 0.08) inset; /* bottom glow */
+  border: 1.5px solid #e2c08d;
+  padding: 1.1rem 0.9rem 0.9rem 0.9rem;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.18s;
+  position: relative;
+  will-change: transform, box-shadow;
 }
-.product-card:hover {
-  box-shadow: 0 8px 32px #a0521c88;
+.product-card.compact:hover {
+  box-shadow:
+    0 12px 32px rgba(150, 114, 89, 0.22),
+    0 2.5px 1px rgba(214, 173, 96, 0.16) inset,
+    0 -3px 12px rgba(214, 173, 96, 0.12) inset;
+  transform: translateY(-6px) scale(1.03);
+  z-index: 2;
 }
 .product-img {
   width: 180px;

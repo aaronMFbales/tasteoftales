@@ -10,8 +10,8 @@ function getUnique(products, key) {
   return Array.from(new Set(products.map(p => p[key]).filter(Boolean).flatMap(v => v.split(',').map(s => s.trim())))).sort();
 }
 
-function ProductsPage() {
 
+function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,6 +30,10 @@ function ProductsPage() {
     available: '',
     search: '',
   });
+
+  // Pagination states
+  const [page, setPage] = useState(1);
+  const pageSize = 12;
 
   useEffect(() => {
     async function fetchProducts() {
@@ -81,9 +85,15 @@ function ProductsPage() {
     return true;
   });
 
+  // Pagination logic
+  const totalEntries = filteredProducts.length;
+  const totalPages = Math.ceil(totalEntries / pageSize);
+  const paginatedProducts = filteredProducts.slice((page - 1) * pageSize, page * pageSize);
+
   function handleFilterChange(e) {
     const { name, value } = e.target;
     setFilter(f => ({ ...f, [name]: value }));
+    setPage(1); // Reset to first page on filter change
   }
 
   function handleClearFilters() {
@@ -100,6 +110,13 @@ function ProductsPage() {
       available: '',
       search: '',
     });
+    setPage(1);
+  }
+
+  function handlePageChange(newPage) {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setPage(newPage);
+    }
   }
 
   return (
@@ -214,35 +231,63 @@ function ProductsPage() {
         {loading && <div style={{ color: '#967259', fontSize: '1.2rem', marginTop: '2rem' }}>Loading products...</div>}
         {error && <div style={{ color: 'red', fontSize: '1.2rem', marginTop: '2rem' }}>{error}</div>}
         {!loading && !error && (
-          <div className="product-list">
-            {filteredProducts.length === 0 ? (
-              <div style={{ color: '#967259', fontSize: '1.2rem', textAlign: 'center' }}>No products found.</div>
-            ) : (
-              filteredProducts.map(product => (
-                <div className="product-card" key={product.id}>
-                  <img className="product-img" src={product.image && product.image !== '#N/A' ? product.image : 'https://www.loffeelabs.com/wp-content/uploads/2025/03/coffee-placeholder.png'} alt={product['roast-name']} />
-                  <div className="product-title">{product['roast-name']}</div>
-                  <div className="product-roaster">{product.roaster}</div>
-                  <div className="product-origin">{product.origin}</div>
-                  <div className="product-details">
-                    <span style={{ fontWeight: 'bold' }}>Roast:</span> {product.degree || 'N/A'}<br />
-                    <span style={{ fontWeight: 'bold' }}>Type:</span> {product.type || 'N/A'}<br />
-                    <span style={{ fontWeight: 'bold' }}>Process:</span> {product.process || 'N/A'}<br />
-                    <span style={{ fontWeight: 'bold' }}>Variety:</span> {product.variety || 'N/A'}<br />
-                    <span style={{ fontWeight: 'bold' }}>Weight:</span> {product.gram ? product.gram + 'g' : 'N/A'}
+          <>
+            <div className="product-list strict-grid four-row">
+              {paginatedProducts.length === 0 ? (
+                <div style={{ color: '#967259', fontSize: '1.2rem', textAlign: 'center' }}>No products found.</div>
+              ) : (
+                paginatedProducts.map(product => (
+                  <div className="product-card compact" key={product.id}>
+                    <img className="product-img" src={product.image && product.image !== '#N/A' ? product.image : 'https://www.loffeelabs.com/wp-content/uploads/2025/03/coffee-placeholder.png'} alt={product['roast-name']} />
+                    <div className="product-title">{product['roast-name']}</div>
+                    <div className="product-roaster">{product.roaster}</div>
+                    <div className="product-origin">{product.origin}</div>
+                    <div className="product-details">
+                      <span style={{ fontWeight: 'bold' }}>Roast:</span> {product.degree || 'N/A'}<br />
+                      <span style={{ fontWeight: 'bold' }}>Type:</span> {product.type || 'N/A'}<br />
+                      <span style={{ fontWeight: 'bold' }}>Process:</span> {product.process || 'N/A'}<br />
+                      <span style={{ fontWeight: 'bold' }}>Variety:</span> {product.variety || 'N/A'}<br />
+                      <span style={{ fontWeight: 'bold' }}>Weight:</span> {product.gram ? product.gram + 'g' : 'N/A'}
+                    </div>
+                    {product.tasting && (
+                      <div className="product-tasting">Tasting: {product.tasting}</div>
+                    )}
+                    <div className="product-price">
+                      ${product.price} <span style={{ fontWeight: 'normal', fontSize: '0.95rem' }}>/ {product['price-cup'] ? `$${product['price-cup']}/cup` : 'bag'}</span>
+                      {/* PHP Conversion below USD price */}
+                      <div style={{ fontSize: '0.98rem', color: '#d32f2f', marginTop: '0.2rem', fontWeight: 500 }}>
+                        ₱{product.price ? (parseFloat(product.price) * 58).toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '0.00'}
+                        <span style={{ fontWeight: 'normal', fontSize: '0.92rem', color: '#967259', marginLeft: '0.3rem' }}>(PHP)</span>
+                      </div>
+                    </div>
+                    <div className={`product-availability${product.available === 'YES' ? '' : ' no'}`}>{product.available === 'YES' ? 'Available' : 'Sold Out'}</div>
+                    {product.link && (
+                      <a className="product-link" href={product.link} target="_blank" rel="noopener noreferrer">View Product</a>
+                    )}
                   </div>
-                  {product.tasting && (
-                    <div className="product-tasting">Tasting: {product.tasting}</div>
-                  )}
-                  <div className="product-price">${product.price} <span style={{ fontWeight: 'normal', fontSize: '0.95rem' }}>/ {product['price-cup'] ? `$${product['price-cup']}/cup` : 'bag'}</span></div>
-                  <div className={`product-availability${product.available === 'YES' ? '' : ' no'}`}>{product.available === 'YES' ? 'Available' : 'Sold Out'}</div>
-                  {product.link && (
-                    <a className="product-link" href={product.link} target="_blank" rel="noopener noreferrer">View Product</a>
-                  )}
-                </div>
-              ))
-            )}
-          </div>
+                ))
+              )}
+            </div>
+            {/* Pagination Controls */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '2rem 0 1rem 0', gap: '1.2rem', flexWrap: 'wrap' }}>
+              <span style={{ color: '#967259', fontSize: '1.1rem' }}>
+                Showing {totalEntries === 0 ? 0 : (page - 1) * pageSize + 1} to {Math.min(page * pageSize, totalEntries)} of {totalEntries} entries
+              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                <button onClick={() => handlePageChange(page - 1)} disabled={page === 1} style={{ background: '#333', color: '#fff', border: 'none', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: page === 1 ? 'not-allowed' : 'pointer' }}>&larr; Prev</button>
+                {/* Page numbers */}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).filter(p => p === 1 || p === totalPages || Math.abs(p - page) <= 2).map((p, idx, arr) => {
+                  if (idx > 0 && p - arr[idx - 1] > 1) {
+                    return [<span key={`dots-${p}`}>...</span>,
+                      <button key={p} onClick={() => handlePageChange(p)} style={{ background: p === page ? '#1976d2' : '#fff', color: p === page ? '#fff' : '#333', border: '1px solid #ccc', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: 'pointer' }}>{p}</button>
+                    ];
+                  }
+                  return <button key={p} onClick={() => handlePageChange(p)} style={{ background: p === page ? '#1976d2' : '#fff', color: p === page ? '#fff' : '#333', border: '1px solid #ccc', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: 'pointer' }}>{p}</button>;
+                })}
+                <button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages} style={{ background: '#333', color: '#fff', border: 'none', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: page === totalPages ? 'not-allowed' : 'pointer' }}>Next &rarr;</button>
+              </div>
+            </div>
+          </>
         )}
       </main>
     </div>
