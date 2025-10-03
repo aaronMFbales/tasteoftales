@@ -31,6 +31,9 @@ function ProductsPage() {
     search: '',
   });
 
+  // Fade animation state for grid
+  const [fade, setFade] = useState('in');
+
   // Pagination states
   const [page, setPage] = useState(1);
   const pageSize = 12;
@@ -92,30 +95,39 @@ function ProductsPage() {
 
   function handleFilterChange(e) {
     const { name, value } = e.target;
-    setFilter(f => ({ ...f, [name]: value }));
-    setPage(1); // Reset to first page on filter change
+    setFade('out');
+    setTimeout(() => {
+      setFilter(f => ({ ...f, [name]: value }));
+      setPage(1);
+      setFade('in');
+    }, 220);
   }
 
   function handleClearFilters() {
-    setFilter({
-      type: '',
-      degree: '',
-      roaster: '',
-      origin: '',
-      producer: '',
-      process: '',
-      variety: '',
-      tasteProfile: '',
-      tasting: '',
-      available: '',
-      search: '',
-    });
-    setPage(1);
+    setFade('out');
+    setTimeout(() => {
+      setFilter({
+        type: '',
+        degree: '',
+        roaster: '',
+        origin: '',
+        producer: '',
+        process: '',
+        variety: '',
+        tasteProfile: '',
+        tasting: '',
+        available: '',
+        search: '',
+      });
+      setPage(1);
+      setFade('in');
+    }, 220);
   }
 
   function handlePageChange(newPage) {
     if (newPage >= 1 && newPage <= totalPages) {
       setPage(newPage);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 
@@ -161,7 +173,7 @@ function ProductsPage() {
         </div>
       </header>
       <div style={{ height: '2.5rem', background: '#ece0d1' }} />
-      <main style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
+  <main style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
         <h1 style={{
           textAlign: 'center',
           fontFamily: 'Pacifico, cursive',
@@ -232,7 +244,7 @@ function ProductsPage() {
         {error && <div style={{ color: 'red', fontSize: '1.2rem', marginTop: '2rem' }}>{error}</div>}
         {!loading && !error && (
           <>
-            <div className="product-list strict-grid four-row">
+            <div className={`product-list strict-grid four-row fade-${fade}`}> 
               {paginatedProducts.length === 0 ? (
                 <div style={{ color: '#967259', fontSize: '1.2rem', textAlign: 'center' }}>No products found.</div>
               ) : (
@@ -277,12 +289,13 @@ function ProductsPage() {
                 <button onClick={() => handlePageChange(page - 1)} disabled={page === 1} style={{ background: '#333', color: '#fff', border: 'none', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: page === 1 ? 'not-allowed' : 'pointer' }}>&larr; Prev</button>
                 {/* Page numbers */}
                 {Array.from({ length: totalPages }, (_, i) => i + 1).filter(p => p === 1 || p === totalPages || Math.abs(p - page) <= 2).map((p, idx, arr) => {
+                  const brown = '#8D4F2F';
                   if (idx > 0 && p - arr[idx - 1] > 1) {
                     return [<span key={`dots-${p}`}>...</span>,
-                      <button key={p} onClick={() => handlePageChange(p)} style={{ background: p === page ? '#1976d2' : '#fff', color: p === page ? '#fff' : '#333', border: '1px solid #ccc', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: 'pointer' }}>{p}</button>
+                      <button key={p} onClick={() => handlePageChange(p)} style={{ background: p === page ? brown : '#fff', color: p === page ? '#fff' : '#333', border: '1px solid #ccc', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: 'pointer' }}>{p}</button>
                     ];
                   }
-                  return <button key={p} onClick={() => handlePageChange(p)} style={{ background: p === page ? '#1976d2' : '#fff', color: p === page ? '#fff' : '#333', border: '1px solid #ccc', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: 'pointer' }}>{p}</button>;
+                  return <button key={p} onClick={() => handlePageChange(p)} style={{ background: p === page ? brown : '#fff', color: p === page ? '#fff' : '#333', border: '1px solid #ccc', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: 'pointer' }}>{p}</button>;
                 })}
                 <button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages} style={{ background: '#333', color: '#fff', border: 'none', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: page === totalPages ? 'not-allowed' : 'pointer' }}>Next &rarr;</button>
               </div>

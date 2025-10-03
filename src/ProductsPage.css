@@ -1,3 +1,27 @@
+/* Slide-in animation for Products page */
+.slide-in {
+  animation: slideInProducts 0.55s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes slideInProducts {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* Fade animation for product grid */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.22s cubic-bezier(.4,0,.2,1);
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.22s cubic-bezier(.4,0,.2,1);
+}
 /* Coffee product card styles for ProductsPage */
 /* Strict 3 rows x 5 columns grid, minimal spacing, full width */
 /* Strict 4 rows x 3 columns grid, minimal spacing, full width */
