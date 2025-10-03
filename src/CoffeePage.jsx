@@ -51,16 +51,18 @@ function CoffeePage() {
             <path d="M10.19 2.62a2.25 2.25 0 0 1 3.62 0l7.19 9.6c.97 1.3.06 3.13-1.62 3.13H19v5.25A2.25 2.25 0 0 1 16.75 23h-9.5A2.25 2.25 0 0 1 5 20.6V15.35H3.81c-1.68 0-2.59-1.83-1.62-3.13l7.19-9.6ZM12 4.13 4.81 13.73c-.13.18-.02.37.19.37H7v6.5c0 .41.34.75.75.75h7.5c.41 0 .75-.34.75-.75v-6.5h2c.21 0 .32-.19.19-.37L12 4.13Z" />
           </svg>
         </Link>
-  <div style={{ flex: 1, display: 'flex', justifyContent: 'center', marginLeft: '-1vw' }}>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
+  <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '3.5rem' }}>
             <Link to="/second" className="nav-link">Home</Link>
-            <Link to="/coffee" className="nav-link">Coffee</Link>
-            <Link to="/wheel" className="nav-link">Wheel</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
+            <Link to="/coffee" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Coffee</Link>
+            <Link to="/map" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Map</Link>
+            <Link to="/products" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Products</Link>
+            <Link to="/wheel" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Wheel</Link>
+            <Link to="/about" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
           </nav>
         </div>
       </header>
-      <div style={{ height: '2.5rem', background: '#ece0d1' }} />
+  <div style={{ height: '4.5rem', background: '#ece0d1' }} />
       <div className={`carousel-entrance-row${animate ? ' animate' : ''}`} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem', marginTop: '0.5rem' }}>
         <div className={`carousel-entrance${animate ? ' animate' : ''}`}>
           <CoffeeCarousel category="hot" onImageClick={idx => setModal({ category: 'hot', index: idx })} />
@@ -79,8 +81,8 @@ function CoffeePage() {
         fontWeight: 'bold',
         letterSpacing: '0.03em',
         borderRadius: '0.7rem',
-        boxShadow: '0 2px 12px #96725922',
-        background: '#ffe4c4',
+
+        background: 'none',
         padding: '0.3rem 1.2rem',
         display: 'block',
         marginLeft: '0',

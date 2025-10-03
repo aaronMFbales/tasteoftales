@@ -86,7 +86,7 @@ function MapPage() {
             <path d="M10.19 2.62a2.25 2.25 0 0 1 3.62 0l7.19 9.6c.97 1.3.06 3.13-1.62 3.13H19v5.25A2.25 2.25 0 0 1 16.75 23h-9.5A2.25 2.25 0 0 1 5 20.6V15.35H3.81c-1.68 0-2.59-1.83-1.62-3.13l7.19-9.6ZM12 4.13 4.81 13.73c-.13.18-.02.37.19.37H7v6.5c0 .41.34.75.75.75h7.5c.41 0 .75-.34.75-.75v-6.5h2c.21 0 .32-.19.19-.37L12 4.13Z" />
           </svg>
         </Link>
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', marginLeft: '-1vw' }}>
+  <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '3.5rem' }}>
             <Link to="/second" className="nav-link">Home</Link>
             <Link to="/coffee" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Coffee</Link>
@@ -97,7 +97,7 @@ function MapPage() {
           </nav>
         </div>
       </header>
-      <div style={{ height: '2.5rem', background: '#ece0d1' }} />
+  <div style={{ height: '4.5rem', background: '#ece0d1' }} />
       <main
         className="fade-in-map"
         style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}
