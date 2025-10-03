@@ -1,3 +1,13 @@
+/* Fade-in animation for MapPage main contents */
+.fade-in-map {
+  opacity: 0;
+  animation: fadeInMap 2s ease forwards;
+}
+
+@keyframes fadeInMap {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 /* Responsive styles for all pages */
 
 @media (max-width: 900px) {

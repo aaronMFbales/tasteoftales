@@ -98,7 +98,10 @@ function MapPage() {
         </div>
       </header>
       <div style={{ height: '2.5rem', background: '#ece0d1' }} />
-      <main style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
+      <main
+        className="fade-in-map"
+        style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}
+      >
         <h1 style={{
           textAlign: 'center',
           fontFamily: 'Pacifico, cursive',
