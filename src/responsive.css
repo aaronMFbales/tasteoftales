@@ -1,3 +1,159 @@
+/* MapPage Responsive Styles */
+.mappage-root {
+  min-height: 100vh;
+  width: 100vw;
+  background: #ece0d1;
+  position: relative;
+}
+
+.mappage-header {
+  width: 100%;
+  background: #8D4F2F;
+  color: #fff;
+  padding: 0.55rem 0 0.7rem 0;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  font-family: Pacifico, cursive;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8px 32px 0 #a0521c88, 0 2px 0 #d6ad60;
+  border-bottom: 6px solid #fff7ed;
+  border-radius: 0 0 2.5rem 2.5rem;
+  filter: drop-shadow(0 8px 24px #d6ad6088);
+}
+
+.mappage-header-spacer {
+  height: 4.5rem;
+  background: #ece0d1;
+}
+
+.mappage-main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mappage-title {
+  text-align: center;
+  font-family: Pacifico, cursive;
+  font-size: 5rem;
+  color: #7a5a35;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.mappage-info {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.coffee-knowledge-map-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0 1.5rem 0;
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.mappage-map-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  height: 60vh;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #fff;
+  margin: 3rem 0 0 0;
+  border: 4px solid #d6ad60;
+  box-shadow: 0 8px 32px 0 #a0521c55, 0 2px 16px #a0521c22;
+}
+
+.mappage-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 8rem;
+}
+
+.mappage-scroll-info {
+  text-align: center;
+  margin-top: 2rem;
+  color: #7a5a35;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .mappage-title {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .mappage-main {
+    padding: 1rem;
+    max-width: 98vw;
+  }
+  .mappage-map-container {
+    height: 40vh;
+    max-width: 70vw;
+    margin: 3rem 0 0 0;
+  }
+  .coffee-knowledge-map-visual {
+    margin: 3rem 0 1rem 0;
+  }
+  .mappage-btns {
+    margin-top: 4rem;
+  }
+  .mappage-scroll-info {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .mappage-title {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
+  }
+  .mappage-main {
+    padding: 0.5rem;
+    max-width: 99vw;
+  }
+  .mappage-map-container {
+    height: 30vh;
+    max-width: 99vw;
+    margin: 0.5rem 0 0 0;
+  }
+  .coffee-knowledge-map-visual {
+    margin: 1.5rem 0 0.5rem 0;
+  }
+  .mappage-btns {
+    margin-top: 2rem;
+  }
+  .mappage-scroll-info {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+}
 /* Fade-in animation for MapPage main contents */
 .fade-in-map {
   opacity: 0;

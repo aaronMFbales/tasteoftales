@@ -521,7 +521,7 @@ export default function SecondPage() {
           </nav>
         </div>
       </header>
-      <div style={{ height: '4.5rem' }} />
+  <div style={{ height: '4.5rem', background: '#ece0d1' }} />
       {/* Only animate the contents, not the background */}
   <div className={`secondpage-entrance${animate ? ' animate' : ''}`} style={{ transition: 'opacity 1.5s', opacity: animate ? 1 : 0, width: '100%' }}>
         <Hero />

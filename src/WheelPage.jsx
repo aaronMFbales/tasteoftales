@@ -64,7 +64,7 @@ export default function WheelPage() {
           position: 'fixed',
           top: 0,
           left: 0,
-          zIndex: 100000,
+          zIndex: 9999,
           display: 'flex',
           alignItems: 'center',
           boxShadow: '0 8px 32px 0 #a0521c88, 0 2px 0 #d6ad60',
@@ -80,15 +80,18 @@ export default function WheelPage() {
           </svg>
         </Link>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center', marginLeft: '0vw' }}>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '3.5rem' }}>
             <Link to="/second" className="nav-link">Home</Link>
-            <Link to="/coffee" className="nav-link">Coffee</Link>
-            <Link to="/wheel" className="nav-link">Wheel</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
+            <Link to="/coffee" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Coffee</Link>
+            <Link to="/map" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Map</Link>
+            <Link to="/products" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Products</Link>
+            <Link to="/wheel" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Wheel</Link>
+            <Link to="/about" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
           </nav>
         </div>
       </header>
-      <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
+  <div style={{ height: '4.5rem', background: '#ece0d1' }} />
+  <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
         <h1 style={{
           textAlign: 'center',
           fontFamily: 'sans-serif',
