@@ -147,7 +147,7 @@ function ProductsPage() {
           position: 'fixed',
           top: 0,
           left: 0,
-          zIndex: 9999,
+          zIndex: 10002, // Increased z-index to ensure header is always on top
           display: 'flex',
           alignItems: 'center',
           boxShadow: '0 8px 32px 0 #a0521c88, 0 2px 0 #d6ad60',

@@ -49,30 +49,30 @@ export default function WheelPage() {
   }, []);
 
   return (
-  <div style={{ minHeight: '100vh', width: '100vw', background: '#f5e6d6', position: 'relative' }}>
-      <header
-        style={{
-          width: '100%',
-          background: '#8D4F2F',
-          color: '#fff',
-          padding: '0.55rem 0 0.7rem 0',
-          textAlign: 'center',
-          fontSize: '2.3rem',
-          fontWeight: 'bold',
-          letterSpacing: '0.07em',
-          fontFamily: 'Pacifico, cursive',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          boxShadow: '0 8px 32px 0 #a0521c88, 0 2px 0 #d6ad60',
-          borderBottom: '6px solid #fff7ed',
-          borderRadius: '0 0 2.5rem 2.5rem',
-          filter: 'drop-shadow(0 8px 24px #d6ad6088)',
-        }}
-      >
+    <div style={{ minHeight: '100vh', width: '100vw', background: '#f5e6d6', position: 'relative' }}>
+        <header
+          style={{
+            width: '100%',
+            background: '#8D4F2F',
+            color: '#fff',
+            padding: '0.55rem 0 0.7rem 0',
+            textAlign: 'center',
+            fontSize: '2.3rem',
+            fontWeight: 'bold',
+            letterSpacing: '0.07em',
+            fontFamily: 'Pacifico, cursive',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 10002, // Increased z-index to ensure header is always on top
+            display: 'flex',
+            alignItems: 'center',
+            boxShadow: '0 8px 32px 0 #a0521c88, 0 2px 0 #d6ad60',
+            borderBottom: '6px solid #fff7ed',
+            borderRadius: '0 0 2.5rem 2.5rem',
+            filter: 'drop-shadow(0 8px 24px #d6ad6088)',
+          }}
+        >
         <Link to="/" style={{ display: 'flex', alignItems: 'center', marginLeft: '2rem', marginRight: '2rem' }}>
           {/* Material Design Home Icon */}
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" style={{ width: '2.2rem', height: '2.2rem' }}>
@@ -120,7 +120,7 @@ export default function WheelPage() {
             fontWeight: 'bold',
             boxShadow: '0 2px 8px #96725944',
             transition: 'background 0.2s',
-            zIndex: 10000,
+            zIndex: 999,
             position: 'relative',
           }}
           onClick={handleFullScreen}
