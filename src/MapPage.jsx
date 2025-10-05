@@ -133,7 +133,7 @@ function MapPage() {
             borderRadius: '1.5rem',
             overflow: 'hidden',
             background: '#fff',
-            margin: '12rem -30vw 0 -30vw',
+            margin: '6rem -30vw 0 -30vw', // restored map top margin
             border: '4px solid #d6ad60',
             boxShadow: '0 8px 32px 0 #a0521c55, 0 2px 16px #a0521c22',
           }}>
@@ -180,7 +180,7 @@ function MapPage() {
           </div>
         </div>
         {/* Buttons are now below the map container */}
-        <div className="coffee-knowledge-origins-btns" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginTop: '18rem' }}>
+  <div className="coffee-knowledge-origins-btns" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginTop: '13rem' }}>
           {Object.keys(originsInfo).map((key) => (
             <button
               key={key}
@@ -204,7 +204,7 @@ function MapPage() {
             </button>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: '5rem', color: '#7a5a35', fontSize: '1.15rem', fontWeight: 500 }}>
+  <div style={{ textAlign: 'center', marginTop: '2rem', color: '#7a5a35', fontSize: '1.15rem', fontWeight: 500 }}>
           Scroll down and up to zoom in and out inside the map
         </div>
       </main>
