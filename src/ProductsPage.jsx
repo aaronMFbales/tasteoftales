@@ -172,21 +172,21 @@ function ProductsPage() {
           </nav>
         </div>
       </header>
-  <div style={{ height: '4.5rem', background: '#ece0d1' }} />
+  <div style={{ height: '2.5rem', background: '#ece0d1' }} />
   <main style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
+        <p style={{ color: '#967259', fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1.2rem', textAlign: 'center', fontWeight: 500 }}>
+          Discover curated specialty coffee beans from top roasters around the world. Explore, compare, and find your next favorite brew!
+        </p>
         <h1 style={{
           textAlign: 'center',
           fontFamily: 'Pacifico, cursive',
           fontSize: '2.5rem',
           color: '#967259',
-          marginTop: '4rem',
+          marginTop: '0.5rem',
           marginBottom: '2rem',
           fontWeight: 'bold',
         }}>
         </h1>
-        <p style={{ color: '#967259', fontSize: '1.5rem', marginTop: '-4rem', textAlign: 'center' }}>
-          Discover curated specialty coffee beans from top roasters around the world. Explore, compare, and find your next favorite brew!
-        </p>
 
         {/* Smart Filtering Menu */}
         <div style={{
@@ -299,6 +299,10 @@ function ProductsPage() {
                 })}
                 <button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages} style={{ background: '#333', color: '#fff', border: 'none', borderRadius: '0.3rem', padding: '0.4rem 1rem', fontWeight: 'bold', cursor: page === totalPages ? 'not-allowed' : 'pointer' }}>Next &rarr;</button>
               </div>
+            </div>
+            <div style={{ width: '100%', textAlign: 'center', margin: '2.5rem 0 0.5rem 0', color: '#967259', fontSize: '1.08rem', fontStyle: 'italic', fontWeight: 500 }}>
+              The coffee data presented on this page is sourced through the Bean Base API, courtesy of
+              <a href="https://www.loffeelabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#8D4F2F', textDecoration: 'underline', marginLeft: '0.3rem' }}>LoffeeLabs</a>
             </div>
           </>
         )}

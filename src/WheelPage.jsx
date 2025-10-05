@@ -90,7 +90,7 @@ export default function WheelPage() {
           </nav>
         </div>
       </header>
-  <div style={{ height: '4.5rem', background: '#ece0d1' }} />
+  <div style={{ height: '1rem', background: '#ece0d1' }} />
   <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
         <h1 style={{
           textAlign: 'center',

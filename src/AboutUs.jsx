@@ -99,7 +99,7 @@ export default function AboutUs() {
           </nav>
         </div>
       </header>
-      <div style={{ height: '4.5rem', background: '#ece0d1' }} />
+  <div style={{ height: '1rem', background: '#ece0d1' }} />
       <style>{`
         .about-img-lift {
           transition: transform 0.32s cubic-bezier(.4,0,.2,1), box-shadow 0.32s cubic-bezier(.4,0,.2,1);
@@ -228,7 +228,7 @@ export default function AboutUs() {
         
         </div>
       </header>
-      <div style={{ height: '4.5rem' }} />
+  <div style={{ height: '1rem' }} />
   <main
     ref={mainRef}
     style={{
