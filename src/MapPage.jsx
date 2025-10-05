@@ -125,11 +125,11 @@ function MapPage() {
           </div>
         </div>
         {/* Map container is now directly below the country description */}
-        <div className="coffee-knowledge-map-visual" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 0 1.5rem 0' }}>
+        <div className="coffee-knowledge-map-visual" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '7rem 0 1.5rem 0' }}>
           <div style={{
             width: '160vw',
             maxWidth: '160vw',
-            height: '65vh',
+            height: '80vh',
             borderRadius: '1.5rem',
             overflow: 'hidden',
             background: '#fff',
@@ -137,7 +137,7 @@ function MapPage() {
             border: '4px solid #d6ad60',
             boxShadow: '0 8px 32px 0 #a0521c55, 0 2px 16px #a0521c22',
           }}>
-            <ComposableMap projectionConfig={{ scale: 110 }} width={window.innerWidth * 1.6} height={window.innerHeight * 0.65} style={{ width: '100%', height: '100%' }}>
+            <ComposableMap projectionConfig={{ scale: 110 }} width={window.innerWidth * 1.6} height={window.innerHeight * 0.8} style={{ width: '100%', height: '100%' }}>
               <ZoomableGroup center={mapCenters[origin]} zoom={mapZooms[origin]}>
                 <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
                   {({ geographies }) =>
@@ -180,7 +180,7 @@ function MapPage() {
           </div>
         </div>
         {/* Buttons are now below the map container */}
-        <div className="coffee-knowledge-origins-btns" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginTop: '13rem' }}>
+        <div className="coffee-knowledge-origins-btns" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginTop: '18rem' }}>
           {Object.keys(originsInfo).map((key) => (
             <button
               key={key}
@@ -204,7 +204,7 @@ function MapPage() {
             </button>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: '1.5rem', color: '#7a5a35', fontSize: '1.15rem', fontWeight: 500 }}>
+        <div style={{ textAlign: 'center', marginTop: '5rem', color: '#7a5a35', fontSize: '1.15rem', fontWeight: 500 }}>
           Scroll down and up to zoom in and out inside the map
         </div>
       </main>
