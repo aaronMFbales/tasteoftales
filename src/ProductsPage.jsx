@@ -38,21 +38,126 @@ function ProductsPage() {
   const [page, setPage] = useState(1);
   const pageSize = 12;
 
+  // Fetch products: try local API first, fall back to Loffeelabs public API if local fails
   useEffect(() => {
     async function fetchProducts() {
+      setLoading(true);
+      setError(null);
+      const localUrl = 'http://localhost:3001/api/products';
+      const remoteUrl = 'https://www.loffeelabs.com/wp-json/beanbase/v1/beans?api_key=tasteoftales7844416169';
+
+      // Try local API
       try {
-        const res = await fetch('https://www.loffeelabs.com/wp-json/beanbase/v1/beans?api_key=tasteoftales7844416169');
-        if (!res.ok) throw new Error('Failed to fetch products');
-        const data = await res.json();
-        setProducts(data.data || []);
+        const res = await fetch(localUrl);
+        if (res.ok) {
+          const data = await res.json();
+          // If local API returned an empty array, fall back to the remote public API
+          if (Array.isArray(data) && data.length === 0) {
+            console.warn('Local API returned empty array — falling back to remote API');
+          } else {
+            // Heuristic: local DB rows created via the simple local admin only contain id/name/price.
+            // If the objects lack keys we expect from the Bean Base API (e.g. 'roast-name', 'roaster', 'origin'),
+            // treat the result as "minimal local data" and fall back to the remote API so the Products page
+            // has full bean data to display.
+            const looksLikeBean = Array.isArray(data) && data.some(item => item && (item['roast-name'] || item.roaster || item.origin || item.tasting));
+            if (!looksLikeBean) {
+              console.warn('Local API returned minimal product objects — falling back to remote API');
+            } else {
+              setProducts(data || []);
+              setLoading(false);
+              return;
+            }
+          }
+        } else {
+          console.warn('Local API returned non-OK status', res.status);
+        }
       } catch (err) {
-        setError('Could not load products.');
+        console.warn('Local API fetch failed:', err && err.message ? err.message : err);
+      }
+
+      // Fallback to remote public API
+      try {
+        const res2 = await fetch(remoteUrl);
+        if (res2.ok) {
+          const payload = await res2.json();
+          setProducts(payload.data || payload || []);
+          setError(null);
+          return;
+        } else {
+          console.warn('Remote API returned non-OK status', res2.status);
+          setError('Failed to load products from both local and remote APIs.');
+        }
+      } catch (err) {
+        console.error('Remote API fetch failed:', err && err.message ? err.message : err);
+        setError('Failed to load products from both local and remote APIs.');
       } finally {
         setLoading(false);
       }
     }
     fetchProducts();
   }, []);
+
+  // Admin form state for local CRUD (name/price)
+  const [newName, setNewName] = useState('');
+  const [newPrice, setNewPrice] = useState('');
+  const [editId, setEditId] = useState(null);
+  const [editName, setEditName] = useState('');
+  const [editPrice, setEditPrice] = useState('');
+
+  async function handleAddProduct(e) {
+    e.preventDefault();
+    try {
+      const res = await fetch('http://localhost:3001/api/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: newName, price: Number(newPrice) || null }),
+      });
+      if (!res.ok) throw new Error('Failed to create');
+      const created = await res.json();
+      setProducts(p => [created, ...p]);
+      setNewName(''); setNewPrice('');
+    } catch (err) {
+      console.error('Add product error', err);
+      alert('Failed to add product');
+    }
+  }
+
+  function startEdit(product) {
+    setEditId(product.id);
+    setEditName(product.name || product['roast-name'] || '');
+    setEditPrice(product.price || '');
+  }
+
+  async function saveEdit(e) {
+    e.preventDefault();
+    try {
+      const res = await fetch(`http://localhost:3001/api/products/${editId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: editName, price: Number(editPrice) || null }),
+      });
+      if (!res.ok) throw new Error('Failed to update');
+      const updated = await res.json();
+      setProducts(p => p.map(it => it.id === updated.id ? updated : it));
+      setEditId(null); setEditName(''); setEditPrice('');
+    } catch (err) {
+      console.error('Update error', err);
+      alert('Failed to update product');
+    }
+  }
+
+  async function handleDelete(id) {
+    if (!confirm('Delete this product?')) return;
+    try {
+      const res = await fetch(`http://localhost:3001/api/products/${id}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error('Delete failed');
+      await res.json();
+      setProducts(p => p.filter(x => x.id !== id));
+    } catch (err) {
+      console.error('Delete error', err);
+      alert('Failed to delete product');
+    }
+  }
 
   // Get unique values for dropdowns
   const uniqueTypes = getUnique(products, 'type');
@@ -169,6 +274,7 @@ function ProductsPage() {
             <Link to="/products" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Products</Link>
             <Link to="/wheel" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Wheel</Link>
             <Link to="/about" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
+            {/* Admin link removed — admin UI is served by the backend HTML on port 3001 */}
           </nav>
         </div>
       </header>
@@ -244,16 +350,33 @@ function ProductsPage() {
         {error && <div style={{ color: 'red', fontSize: '1.2rem', marginTop: '2rem' }}>{error}</div>}
         {!loading && !error && (
           <>
+            {/* Admin quick add / edit (local API) */}
+            <div style={{ width: '100%', marginBottom: '1.5rem', background: '#fff8f0', padding: '1rem', borderRadius: '0.8rem', boxShadow: '0 2px 8px #d6ad6088' }}>
+              <form onSubmit={handleAddProduct} style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <input value={newName} onChange={e => setNewName(e.target.value)} placeholder="New product name" style={{ padding: '0.5rem', borderRadius: '0.5rem', border: '1px solid #d6ad60' }} />
+                <input value={newPrice} onChange={e => setNewPrice(e.target.value)} placeholder="Price" type="number" style={{ padding: '0.5rem', borderRadius: '0.5rem', border: '1px solid #d6ad60', width: '120px' }} />
+                <button type="submit" style={{ background: '#8D4F2F', color: '#fff', padding: '0.5rem 1rem', borderRadius: '0.5rem', border: 'none', fontWeight: 'bold' }}>Add Product (Local)</button>
+                {editId && (
+                  <form onSubmit={saveEdit} style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                    <input value={editName} onChange={e => setEditName(e.target.value)} placeholder="Edit name" style={{ padding: '0.4rem', borderRadius: '0.4rem', border: '1px solid #ccc' }} />
+                    <input value={editPrice} onChange={e => setEditPrice(e.target.value)} placeholder="Edit price" type="number" style={{ padding: '0.4rem', borderRadius: '0.4rem', border: '1px solid #ccc', width: '100px' }} />
+                    <button type="submit" style={{ background: '#2e7d32', color: '#fff', padding: '0.4rem 0.8rem', borderRadius: '0.4rem', border: 'none' }}>Save</button>
+                    <button type="button" onClick={() => { setEditId(null); setEditName(''); setEditPrice(''); }} style={{ background: '#9e9e9e', color: '#fff', padding: '0.4rem 0.8rem', borderRadius: '0.4rem', border: 'none' }}>Cancel</button>
+                  </form>
+                )}
+              </form>
+              <div style={{ textAlign: 'center', marginTop: '0.6rem', color: '#967259', fontSize: '0.95rem' }}>Admin quick actions use your local Express API at <code>http://localhost:3001</code></div>
+            </div>
             <div className={`product-list strict-grid four-row fade-${fade}`}> 
               {paginatedProducts.length === 0 ? (
                 <div style={{ color: '#967259', fontSize: '1.2rem', textAlign: 'center' }}>No products found.</div>
               ) : (
                 paginatedProducts.map(product => (
                   <div className="product-card compact" key={product.id}>
-                    <img className="product-img" src={product.image && product.image !== '#N/A' ? product.image : 'https://www.loffeelabs.com/wp-content/uploads/2025/03/coffee-placeholder.png'} alt={product['roast-name']} />
-                    <div className="product-title">{product['roast-name']}</div>
-                    <div className="product-roaster">{product.roaster}</div>
-                    <div className="product-origin">{product.origin}</div>
+                    <img className="product-img" src={product.image && product.image !== '#N/A' ? product.image : 'https://www.loffeelabs.com/wp-content/uploads/2025/03/coffee-placeholder.png'} alt={product['roast-name'] || product.name || 'Product'} />
+                    <div className="product-title">{product['roast-name'] || product.name || 'Untitled'}</div>
+                    <div className="product-roaster">{product.roaster || ''}</div>
+                    <div className="product-origin">{product.origin || ''}</div>
                     <div className="product-details">
                       <span style={{ fontWeight: 'bold' }}>Roast:</span> {product.degree || 'N/A'}<br />
                       <span style={{ fontWeight: 'bold' }}>Type:</span> {product.type || 'N/A'}<br />

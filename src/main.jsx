@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
-      <Routes>
+    <Routes>
         <Route path="/" element={<App />} />
         <Route path="/second" element={<SecondPage />} />
     <Route path="/coffee" element={<CoffeePage />} />

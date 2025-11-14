@@ -380,6 +380,11 @@ export default function AboutUs() {
             </svg>
           </a>
         </div>
+        <div style={{ marginTop: '0.9rem' }}>
+          <a href="http://localhost:3001/admin/console" target="_blank" rel="noopener noreferrer" style={{ color: '#8D4F2F', textDecoration: 'underline', fontWeight: 600 }}>
+            Admin (Server)
+          </a>
+        </div>
       </footer>
       </main>
     </div>
