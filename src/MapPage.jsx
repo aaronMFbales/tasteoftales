@@ -92,8 +92,8 @@ function MapPage() {
           </div>
         </div>
         {/* Map container is now directly below the country description */}
-        <div className="coffee-knowledge-map-visual">
-          <div className="mappage-map-container">
+        <div className="coffee-knowledge-map-visual" style={{ marginTop: '7.5rem' }}>
+          <div className="mappage-map-container" style={{ marginTop: '0' }}>
             <ComposableMap projectionConfig={{ scale: 110 }} width={window.innerWidth * 1.6} height={window.innerHeight * 0.8} style={{ width: '100%', height: '100%' }}>
               <ZoomableGroup center={mapCenters[origin]} zoom={mapZooms[origin]}>
                 <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
@@ -136,8 +136,8 @@ function MapPage() {
             </ComposableMap>
           </div>
         </div>
-        {/* Buttons are now below the map container */}
-  <div className="coffee-knowledge-origins-btns mappage-btns">
+    {/* Buttons are now below the map container */}
+  <div className="coffee-knowledge-origins-btns mappage-btns" style={{ marginTop: '8rem' }}>
           {Object.keys(originsInfo).map((key) => (
             <button
               key={key}
@@ -161,7 +161,7 @@ function MapPage() {
             </button>
           ))}
         </div>
-  <div className="mappage-scroll-info">
+  <div className="mappage-scroll-info" style={{ marginTop: '1.75rem' }}>
           Scroll down and up to zoom in and out inside the map
         </div>
       </main>
