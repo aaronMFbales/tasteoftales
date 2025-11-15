@@ -74,7 +74,7 @@ function CoffeePage() {
       <div style={{
         width: '100%',
         textAlign: 'center',
-        marginTop: '-0.7rem',
+        marginTop: '1.6rem',
         marginBottom: '0',
         fontSize: '1.22rem',
         color: '#a0521c',
